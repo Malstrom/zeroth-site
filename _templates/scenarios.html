@@ -1,160 +1,82 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="light" data-page="__template__">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-i18n="meta.title"></title>
+  <title data-i18n="meta.title">zeroth template</title>
+  <meta name="description" content="">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./assets/css/style.css">
+  <style>
+    :root, [data-theme="light"] { --color-bg:#f7f6f2; --color-surface:#f9f8f5; --color-surface-offset:#f0ede8; --color-divider:#dcd9d5; --color-border:#d4d1ca; --color-text:#28251d; --color-text-muted:#6b6860; --color-text-faint:#b0aea9; --color-primary:#01696f; --color-primary-hover:#0c4e54; --shadow-sm:0 1px 3px oklch(0.2 0.01 80 / 0.06); --shadow-md:0 4px 16px oklch(0.2 0.01 80 / 0.09); --radius-sm:0.375rem; --radius-md:0.5rem; --radius-lg:0.75rem; --radius-xl:1rem; --font-display:'Instrument Serif', Georgia, serif; --font-body:'Geist', 'Helvetica Neue', sans-serif; --font-mono:'Geist Mono', 'Courier New', monospace; --text-xs:clamp(0.75rem,0.7rem + 0.25vw,0.875rem); --text-sm:clamp(0.875rem,0.8rem + 0.35vw,1rem); --text-base:clamp(1rem,0.95rem + 0.25vw,1.125rem); --text-lg:clamp(1.125rem,1rem + 0.75vw,1.5rem); --text-xl:clamp(1.5rem,1.2rem + 1.25vw,2.25rem); --text-2xl:clamp(2rem,1.2rem + 2.5vw,3.5rem); --space-1:0.25rem; --space-2:0.5rem; --space-3:0.75rem; --space-4:1rem; --space-5:1.25rem; --space-6:1.5rem; --space-8:2rem; --space-10:2.5rem; --space-12:3rem; --space-16:4rem; --space-20:5rem; --space-24:6rem; --content-default:920px; --content-wide:1160px; --t:180ms cubic-bezier(0.16, 1, 0.3, 1);} 
+    [data-theme="dark"] { --color-bg:#171614; --color-surface:#1c1b19; --color-surface-offset:#252422; --color-divider:#2e2d2b; --color-border:#393836; --color-text:#cdccca; --color-text-muted:#8a8885; --color-text-faint:#5a5957; --color-primary:#4f98a3; --color-primary-hover:#6db8c4; --shadow-sm:0 1px 3px oklch(0 0 0 / 0.25); --shadow-md:0 4px 16px oklch(0 0 0 / 0.35);} 
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;} html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;} body{min-height:100dvh;font-family:var(--font-body);font-size:var(--text-base);line-height:1.65;color:var(--color-text);background:var(--color-bg);} a{text-decoration:none;color:inherit;} button{background:none;border:none;font:inherit;color:inherit;cursor:pointer;} h1,h2,h3{line-height:1.15;text-wrap:balance;} p{text-wrap:pretty;max-width:68ch;} .container{max-width:var(--content-default);margin-inline:auto;padding-inline:clamp(var(--space-4),5vw,var(--space-12));} .nav{position:sticky;top:0;z-index:100;background:color-mix(in oklch,var(--color-bg) 92%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--color-divider);} .nav__inner{max-width:var(--content-wide);margin-inline:auto;padding:var(--space-4) clamp(var(--space-4),5vw,var(--space-12));display:flex;align-items:center;justify-content:space-between;gap:var(--space-4);flex-wrap:wrap;} .nav__brand,.nav__links,.nav__actions{display:flex;align-items:center;gap:var(--space-4);flex-wrap:wrap;} .nav__logo{font-family:var(--font-mono);font-size:var(--text-sm);font-weight:500;} .nav__framework{font-family:var(--font-mono);font-size:var(--text-sm);text-transform:uppercase;letter-spacing:0.08em;color:var(--color-text-muted);} .nav__link,.nav__lang{font-size:var(--text-sm);color:var(--color-text-muted);} .nav__lang{padding:0.45rem 0.7rem;border:1px solid var(--color-border);border-radius:var(--radius-md);} .nav__toggle{width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:var(--radius-md);color:var(--color-text-muted);} .page-hero{padding-block:clamp(var(--space-16),10vw,var(--space-24)) var(--space-12);border-bottom:1px solid var(--color-divider);} .page-hero__eyebrow{font-family:var(--font-mono);font-size:var(--text-xs);letter-spacing:0.12em;text-transform:uppercase;color:var(--color-text-faint);margin-bottom:var(--space-6);} .page-hero__title{font-size:var(--text-2xl);font-weight:300;letter-spacing:-0.02em;margin-bottom:var(--space-5);} .page-hero__body{font-size:var(--text-lg);font-weight:300;color:var(--color-text-muted);max-width:54ch;} .scenario-grid{display:grid;gap:var(--space-5);padding-block:clamp(var(--space-12),8vw,var(--space-20));} .scenario-card{padding:var(--space-6);background:var(--color-surface);border:1px solid oklch(from var(--color-text) l c h / 0.08);border-radius:var(--radius-lg);} .scenario-card__eyebrow{font-family:var(--font-mono);font-size:var(--text-xs);letter-spacing:0.08em;text-transform:uppercase;color:var(--color-text-faint);margin-bottom:var(--space-3);} .scenario-card__title{font-size:var(--text-lg);font-weight:300;margin-bottom:var(--space-3);} .scenario-card__body{font-size:var(--text-sm);color:var(--color-text-muted);} .footer{padding-block:var(--space-12);border-top:1px solid var(--color-divider);} .footer__inner{display:flex;align-items:center;justify-content:space-between;gap:var(--space-4);flex-wrap:wrap;color:var(--color-text-faint);} .footer__meta{font-family:var(--font-mono);font-size:var(--text-xs);letter-spacing:0.06em;} .footer__links{display:flex;gap:var(--space-6);flex-wrap:wrap;} .footer__links a{font-size:var(--text-xs);color:var(--color-text-faint);} 
+  </style>
 </head>
-<!--
-  TEMPLATE: scenarios.html
-  USE FOR: {framework}/scenarios.html for all frameworks
-
-  AFTER COPYING:
-    1. Update data-page on <body> (data-page="scenarios")
-    2. Update loader path: ./assets/js/i18n.js -> ../assets/js/i18n.js
-    3. Update all href paths
-    4. If aurora/sudo-hire-me: remove the Why nav link
-
-  CONTENT SOURCES:
-    intro          -> frameworks/{fw}/.scenarios.yml (general description)
-    scenario cards -> frameworks/{fw}/scenarios/{scenario}.yml
-                      fields: on: (trigger phrases), steps:, output:
-    RULE: translate all content to human language — no internal technical terms
-    RULE: trigger phrases must be in natural language of the user
--->
-<body data-page="scenarios">
-
-  <nav class="nav" aria-label="Main navigation">
+<body>
+  <nav class="nav" aria-label="Primary navigation">
     <div class="nav__inner">
-      <a href="./zeroth.html" class="nav__logo" aria-label="zeroth home">
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-          <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/>
-          <circle cx="10" cy="10" r="2.5" fill="currentColor"/>
-          <line x1="10" y1="2" x2="10" y2="5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-          <line x1="10" y1="14.5" x2="10" y2="18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-          <line x1="2" y1="10" x2="5.5" y2="10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-          <line x1="14.5" y1="10" x2="18" y2="10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-        </svg>
-        zeroth
-      </a>
+      <div class="nav__brand">
+        <a href="../zeroth.html" class="nav__logo" aria-label="Back to zeroth"><span data-i18n="nav.zeroth">zeroth ←</span></a>
+        <span class="nav__framework" data-i18n="nav.framework_name">framework</span>
+      </div>
+      <div class="nav__links">
+        <a href="why.html" class="nav__link" data-i18n="nav.why">Why</a>
+        <a href="scenarios.html" class="nav__link" data-i18n="nav.scenarios">Scenarios</a>
+        <a href="start.html" class="nav__link" data-i18n="nav.start">Start</a>
+      </div>
       <div class="nav__actions">
-        <span class="nav__framework-name" data-i18n="nav.framework_name"></span>
-        <!-- Remove for aurora / sudo-hire-me -->
-        <a href="./why.html" class="nav__link" data-i18n="nav.why">Why</a>
-        <a href="./scenarios.html" class="nav__link nav__link--active" aria-current="page" data-i18n="nav.scenarios">Scenarios</a>
-        <a href="./start.html" class="nav__link" data-i18n="nav.start">Start</a>
         <button class="nav__lang" data-lang-toggle aria-label="Switch language">EN / RU</button>
-        <button class="nav__toggle" data-theme-toggle aria-label="Switch to dark mode">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-          </svg>
-        </button>
+        <button class="nav__toggle" data-theme-toggle aria-label="Switch theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></button>
       </div>
     </div>
   </nav>
 
   <main>
-
-    <!-- [1] INTRO
-         What is a scenario: a trigger phrase that activates a precise flow
-         SOURCE: frameworks/{fw}/.scenarios.yml -->
-    <section class="hero" id="intro" aria-labelledby="intro-heading">
+    <section class="page-hero" aria-labelledby="scenarios-title">
       <div class="container">
-        <p class="hero__eyebrow" data-i18n="nav.framework_name"></p>
-        <h1 class="hero__headline" id="intro-heading" data-i18n="intro.heading"></h1>
-        <p class="hero__tagline" data-i18n="intro.body"></p>
+        <!-- Source: framework/<name>/copy/*.yml scenarios.hero.* -->
+        <h1 class="page-hero__title" id="scenarios-title" data-i18n="scenarios.hero.title"></h1>
+        <p class="page-hero__body" data-i18n="scenarios.hero.body"></p>
       </div>
     </section>
 
-    <!-- [2] SCENARIO CARDS
-         One card per scenario defined in the framework.
-         Cards are generated dynamically by i18n.js reading scenarios.* keys from YAML.
-         Each card shows:
-           - scenario name (human-readable, not internal id)
-           - trigger phrases in natural language
-           - what happens step by step
-           - what remains after the session (concrete outputs)
-         SOURCE: frameworks/{fw}/scenarios/{scenario}.yml -> on:, steps:, output:
-         RULE: no internal technical terms
-         RULE: steps written from user perspective -->
-    <section class="section" id="scenarios" aria-label="Scenarios">
-      <div class="container">
-        <div class="scenarios-grid" id="scenarios-grid" role="list">
-          <!-- JS populates scenario cards here from YAML keys scenarios.* -->
-          <!-- Fallback static card structure for reference:
-          <article class="scenario-card" role="listitem">
-            <span class="card__name" data-i18n="scenarios.{id}.name"></span>
-            <div class="card__triggers">
-              <p class="card__triggers-label" data-i18n="scenarios.triggers_label">You write:</p>
-              <ul class="card__trigger-list">
-                <li data-i18n="scenarios.{id}.trigger_1"></li>
-                <li data-i18n="scenarios.{id}.trigger_2"></li>
-              </ul>
-            </div>
-            <hr class="card__rule">
-            <ol class="card__steps">
-              <li data-i18n="scenarios.{id}.step_1"></li>
-              <li data-i18n="scenarios.{id}.step_2"></li>
-              <li data-i18n="scenarios.{id}.step_3"></li>
-            </ol>
-            <div class="card__output">
-              <p class="card__output-label" data-i18n="scenarios.output_label">What remains:</p>
-              <p data-i18n="scenarios.{id}.output"></p>
-            </div>
-          </article>
-          -->
-        </div>
-      </div>
+    <section class="container scenario-grid" aria-label="Scenario list">
+      <!-- Source: framework/<name>/scenarios.yml or exported scenario summaries. Repeat card pattern as needed. -->
+      <article class="scenario-card">
+        <p class="scenario-card__eyebrow" data-i18n="scenarios.item1.eyebrow"></p>
+        <h2 class="scenario-card__title" data-i18n="scenarios.item1.title"></h2>
+        <p class="scenario-card__body" data-i18n="scenarios.item1.body"></p>
+      </article>
+      <article class="scenario-card">
+        <p class="scenario-card__eyebrow" data-i18n="scenarios.item2.eyebrow"></p>
+        <h2 class="scenario-card__title" data-i18n="scenarios.item2.title"></h2>
+        <p class="scenario-card__body" data-i18n="scenarios.item2.body"></p>
+      </article>
+      <article class="scenario-card">
+        <p class="scenario-card__eyebrow" data-i18n="scenarios.item3.eyebrow"></p>
+        <h2 class="scenario-card__title" data-i18n="scenarios.item3.title"></h2>
+        <p class="scenario-card__body" data-i18n="scenarios.item3.body"></p>
+      </article>
     </section>
-
   </main>
 
   <footer class="footer">
     <div class="container">
       <div class="footer__inner">
-        <span class="footer__left" data-i18n="footer.copy"></span>
+        <span class="footer__meta" data-i18n="footer.meta"></span>
         <nav class="footer__links" aria-label="Footer links">
-          <a href="./zeroth.html" data-i18n="footer.link_zeroth">zeroth</a>
-          <a href="https://github.com/Malstrom/zeroth" target="_blank" rel="noopener noreferrer" data-i18n="footer.link_github">GitHub</a>
-          <a href="./scenarios.html" data-i18n="footer.link_scenarios">Scenarios</a>
-          <a href="./start.html" data-i18n="footer.link_start">Start</a>
+          <a href="../zeroth.html" data-i18n="footer.zeroth"></a>
+          <a href="#" data-i18n="footer.framework"></a>
         </nav>
-        <div class="footer__toggles">
-          <button class="nav__lang" data-lang-toggle aria-label="Switch language">EN / RU</button>
-          <button class="nav__toggle" data-theme-toggle aria-label="Switch to dark mode">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-            </svg>
-          </button>
-        </div>
       </div>
     </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/js-yaml@4/dist/js.yaml.min.js"></script>
   <script src="./assets/js/i18n.js"></script>
   <script>
-    (function(){
-      const r = document.documentElement;
-      const toggles = document.querySelectorAll('[data-theme-toggle]');
-      const sun = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>';
-      const moon = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
-      let theme = matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light';
-      r.setAttribute('data-theme', theme);
-      toggles.forEach(btn => {
-        btn.innerHTML = theme === 'dark' ? sun : moon;
-        btn.addEventListener('click', () => {
-          theme = theme === 'dark' ? 'light' : 'dark';
-          r.setAttribute('data-theme', theme);
-          toggles.forEach(b => { b.innerHTML = theme === 'dark' ? sun : moon; });
-        });
-      });
-    })();
+    (function(){const root=document.documentElement;const toggle=document.querySelector('[data-theme-toggle]');const sun='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>';const moon='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';let theme=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';root.setAttribute('data-theme',theme);if(toggle){toggle.innerHTML=theme==='dark'?sun:moon;toggle.addEventListener('click',function(){theme=theme==='dark'?'light':'dark';root.setAttribute('data-theme',theme);toggle.innerHTML=theme==='dark'?sun:moon;});}})();
   </script>
-
 </body>
 </html>

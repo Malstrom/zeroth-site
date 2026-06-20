@@ -1,67 +1,91 @@
-/* language.css — styles specific to dojo/language.html */
+/* language.css — dojo/language.html */
 
-/* chat — inline session preview */
+/* ── Chat — Perplexity-style ───────────────────────────────────────────── */
+
 .chat {
-  margin-top: var(--space-8);
+  margin-top: var(--space-10);
   display: flex;
   flex-direction: column;
-  gap: var(--space-5);
-  max-width: var(--content-narrow);
+  gap: var(--space-6);
+  max-width: 680px;
 }
 
-.chat__message {
+/* User turn — right-aligned bubble */
+.chat__turn--user {
   display: flex;
-  flex-direction: column;
-  gap: var(--space-2);
+  justify-content: flex-end;
 }
 
-.chat__message--user {
-  align-items: flex-end;
-}
-
-.chat__message--user .chat__bubble {
+.chat__user-bubble {
   background: var(--color-surface-offset);
   border: 1px solid var(--color-border);
   color: var(--color-text);
   padding: var(--space-3) var(--space-5);
-  border-radius: var(--radius-lg) var(--radius-lg) var(--radius-sm) var(--radius-lg);
+  border-radius: 1.25rem 1.25rem 0.25rem 1.25rem;
   font-size: var(--text-sm);
-  max-width: 72%;
-  display: inline-block;
+  line-height: 1.6;
+  max-width: 75%;
 }
 
-.chat__message--ai {
+[data-theme="dark"] .chat__user-bubble {
+  background: color-mix(in oklch, var(--color-primary) 15%, var(--color-surface));
+  border-color: color-mix(in oklch, var(--color-primary) 25%, var(--color-border));
+}
+
+/* AI turn — avatar + free text, no bubble */
+.chat__turn--ai {
+  display: flex;
   align-items: flex-start;
+  gap: var(--space-3);
 }
 
-.chat__meta {
+.chat__ai-avatar {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--color-surface-offset);
+  border: 1px solid var(--color-border);
+  color: var(--color-primary);
+  margin-top: 2px;
+}
+
+.chat__ai-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  flex: 1;
+}
+
+/* Thinking block — left border line, mono faint text */
+.chat__thinking {
   display: flex;
   flex-direction: column;
   gap: var(--space-1);
-  margin-bottom: var(--space-2);
-  padding-left: var(--space-1);
+  padding-left: var(--space-3);
+  border-left: 2px solid var(--color-divider);
 }
 
-.chat__meta span {
+.chat__thinking span {
   font-family: var(--font-mono);
   font-size: var(--text-xs);
   color: var(--color-text-faint);
-  letter-spacing: 0.03em;
+  letter-spacing: 0.02em;
+  line-height: 1.6;
 }
 
-.chat__message--ai .chat__bubble {
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  color: var(--color-text);
-  padding: var(--space-4) var(--space-5);
-  border-radius: var(--radius-sm) var(--radius-lg) var(--radius-lg) var(--radius-lg);
+/* AI reply — free text, no bubble */
+.chat__ai-reply {
   font-size: var(--text-sm);
-  line-height: 1.7;
-  max-width: 88%;
-  display: inline-block;
+  color: var(--color-text);
+  line-height: 1.75;
+  max-width: 58ch;
+  margin: 0;
 }
 
-@media (max-width: 700px) {
-  .chat__message--user .chat__bubble { max-width: 90%; }
-  .chat__message--ai .chat__bubble { max-width: 100%; }
+@media (max-width: 600px) {
+  .chat__user-bubble { max-width: 90%; }
 }

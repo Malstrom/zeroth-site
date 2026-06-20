@@ -38,7 +38,6 @@
   <main>
     <section class="page-hero" aria-labelledby="landing-title">
       <div class="container">
-        <!-- Source: dojo/i18n/language/en.yml landing.hero.* No CTA in landing hero. -->
         <p class="page-hero__eyebrow" data-i18n="landing.hero.eyebrow"></p>
         <h1 class="page-hero__title" id="landing-title" data-i18n="landing.hero.title"></h1>
         <p class="page-hero__body" data-i18n="landing.hero.body"></p>
@@ -47,7 +46,6 @@
 
     <section class="section" aria-labelledby="landing-problem-title">
       <div class="container">
-        <!-- Source: dojo/i18n/language/en.yml landing.problem.* Narrative section: paragraphs only, no bullets. -->
         <p class="section__label" data-i18n="landing.problem.label"></p>
         <h2 class="section__heading" id="landing-problem-title" data-i18n="landing.problem.title"></h2>
         <div class="stack section__body">
@@ -58,9 +56,29 @@
       </div>
     </section>
 
+    <!-- chat component: source — _components/chat.html -->
+    <section class="section chat-section" aria-labelledby="session-title">
+      <div class="container">
+        <p class="section__label" data-i18n="landing.session.label"></p>
+        <h2 class="section__heading" id="session-title" data-i18n="landing.session.title"></h2>
+        <div class="chat">
+          <div class="chat__message chat__message--user">
+            <span class="chat__bubble" data-i18n="landing.session.user_msg"></span>
+          </div>
+          <div class="chat__message chat__message--ai">
+            <div class="chat__meta">
+              <span data-i18n="landing.session.ai_meta1"></span>
+              <span data-i18n="landing.session.ai_meta2"></span>
+              <span data-i18n="landing.session.ai_meta3"></span>
+            </div>
+            <span class="chat__bubble" data-i18n="landing.session.ai_reply"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section" aria-labelledby="landing-flow-title">
       <div class="container">
-        <!-- Source: dojo/i18n/language/en.yml landing.flow.* Steps must stay numeric 01/02/03, no icons. -->
         <p class="section__label" data-i18n="landing.flow.label"></p>
         <h2 class="section__heading" id="landing-flow-title" data-i18n="landing.flow.title"></h2>
         <ol class="numbered-list">
@@ -91,7 +109,6 @@
 
     <section class="section" aria-labelledby="landing-principles-title">
       <div class="container">
-        <!-- Source: dojo/i18n/language/en.yml landing.principles.* Five numbered principles, no decorative icons. -->
         <p class="section__label" data-i18n="landing.principles.label"></p>
         <h2 class="section__heading" id="landing-principles-title" data-i18n="landing.principles.title"></h2>
         <div class="principles">

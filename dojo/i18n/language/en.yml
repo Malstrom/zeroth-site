@@ -18,16 +18,25 @@ en:
     problem:
       label: "The problem"
       title: "Most language learning is theatre."
-      p1: "You finish a lesson. The app gives you a streak. You feel productive. Three weeks later you can't hold a five-minute conversation."
-      p2: "The system is optimised for retention of its own product — not for your actual fluency. It teaches what's easy to teach, not what you actually need."
+      p1: "You finish a lesson. The app gives you a streak. You feel productive. Three weeks later you can’t hold a five-minute conversation."
+      p2: "The system is optimised for retention of its own product — not for your actual fluency. It teaches what’s easy to teach, not what you actually need."
       p3: "dojo is built on a different premise: the AI tracks your real knowledge state, session after session, and only ever works on the gap between where you are and where you need to be."
+
+    session:
+      label: "A real session"
+      title: "This is what dojo looks like."
+      user_msg: "ciao, riprendiamo a studiare italiano"
+      ai_meta1: "↳ reading last session log..."
+      ai_meta2: "↳ gap identified: passato prossimo vs imperfetto"
+      ai_meta3: "↳ setting today’s focus"
+      ai_reply: "Bentornato. Last session we stopped on passato prossimo. You still have systematic errors on the distinction with imperfetto — using passato prossimo for ongoing past states. Today we work exactly there. Iniziamo."
 
     flow:
       label: "How it works"
       title: "Three moves, repeated until fluent."
       step1:
         title: "Map the gap"
-        body: "At the start of every session the AI reads your log and identifies exactly what you don't know yet. No re-briefing. No warm-up theatre."
+        body: "At the start of every session the AI reads your log and identifies exactly what you don’t know yet. No re-briefing. No warm-up theatre."
       step2:
         title: "Work the gap"
         body: "The sensei drills the gap — vocabulary, grammar, listening, production. It adjusts in real time based on your responses."

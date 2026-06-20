@@ -1,0 +1,28 @@
+<!-- chat.html — canonical chat component -->
+<!-- Copy this block into any landing that needs a session preview. -->
+<!-- Content is driven by i18n keys under landing.session.* -->
+<!-- CSS lives in dojo/css/dojo_base.css under /* chat component */ -->
+
+<section class="section chat-section" aria-labelledby="session-title">
+  <div class="container">
+    <p class="section__label" data-i18n="landing.session.label"></p>
+    <h2 class="section__heading" id="session-title" data-i18n="landing.session.title"></h2>
+
+    <div class="chat">
+
+      <div class="chat__message chat__message--user">
+        <span class="chat__bubble" data-i18n="landing.session.user_msg"></span>
+      </div>
+
+      <div class="chat__message chat__message--ai">
+        <div class="chat__meta">
+          <span data-i18n="landing.session.ai_meta1"></span>
+          <span data-i18n="landing.session.ai_meta2"></span>
+          <span data-i18n="landing.session.ai_meta3"></span>
+        </div>
+        <span class="chat__bubble" data-i18n="landing.session.ai_reply"></span>
+      </div>
+
+    </div>
+  </div>
+</section>

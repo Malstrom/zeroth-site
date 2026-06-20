@@ -61,36 +61,59 @@
       <div class="container">
         <p class="section__label" data-i18n="landing.session.label"></p>
         <h2 class="section__heading" id="session-title" data-i18n="landing.session.title"></h2>
+        <p class="section__body" data-i18n="landing.session.intro"></p>
 
-        <div class="chat">
+        <div class="scenario-demo" role="region" aria-label="Example dojo session">
 
-          <div class="chat__turn chat__turn--user">
-            <div class="chat__user-bubble">
-              <span data-i18n="landing.session.user_msg"></span>
+          <div class="scenario-demo__bar">
+            <div class="scenario-demo__dots" aria-hidden="true">
+              <div class="scenario-demo__dot"></div>
+              <div class="scenario-demo__dot"></div>
+              <div class="scenario-demo__dot"></div>
             </div>
+            <span class="scenario-demo__label" data-i18n="landing.session.bar_label"></span>
           </div>
 
-          <div class="chat__turn chat__turn--ai">
-            <div class="chat__ai-avatar" aria-hidden="true">
-              <svg width="16" height="16" viewBox="0 0 20 20" fill="none">
-                <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/>
-                <circle cx="10" cy="10" r="2.5" fill="currentColor"/>
-                <line x1="10" y1="2" x2="10" y2="5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                <line x1="10" y1="14.5" x2="10" y2="18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                <line x1="2" y1="10" x2="5.5" y2="10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                <line x1="14.5" y1="10" x2="18" y2="10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-              </svg>
+          <div class="scenario-demo__body">
+
+            <div class="msg msg--user">
+              <span class="msg__label">You</span>
+              <div class="msg__bubble" data-i18n="landing.session.user_msg1"></div>
             </div>
-            <div class="chat__ai-body">
-              <div class="chat__thinking">
-                <span data-i18n="landing.session.ai_meta1"></span>
-                <span data-i18n="landing.session.ai_meta2"></span>
-                <span data-i18n="landing.session.ai_meta3"></span>
+
+            <div class="msg msg--agent">
+              <span class="msg__label">dojo</span>
+              <div class="msg__bubble">
+                <p data-i18n="landing.session.ai_reply1_pre"></p>
+                <p data-i18n="landing.session.ai_reply1_gaps_intro"></p>
+                <ul class="gap-list">
+                  <li>
+                    <span class="gap-tag" data-i18n="landing.session.ai_gap1_tag"></span>
+                    <p data-i18n="landing.session.ai_gap1_body"></p>
+                  </li>
+                  <li>
+                    <span class="gap-tag" data-i18n="landing.session.ai_gap2_tag"></span>
+                    <p data-i18n="landing.session.ai_gap2_body"></p>
+                  </li>
+                  <li>
+                    <span class="gap-tag" data-i18n="landing.session.ai_gap3_tag"></span>
+                    <p data-i18n="landing.session.ai_gap3_body"></p>
+                  </li>
+                </ul>
               </div>
-              <p class="chat__ai-reply" data-i18n="landing.session.ai_reply"></p>
             </div>
-          </div>
 
+            <div class="msg msg--user">
+              <span class="msg__label">You</span>
+              <div class="msg__bubble" data-i18n="landing.session.user_msg2"></div>
+            </div>
+
+            <div class="msg msg--agent">
+              <span class="msg__label">dojo</span>
+              <div class="msg__bubble" data-i18n="landing.session.ai_reply2"></div>
+            </div>
+
+          </div>
         </div>
       </div>
     </section>

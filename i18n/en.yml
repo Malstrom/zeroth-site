@@ -1,0 +1,39 @@
+en:
+  hero:
+    eyebrow: "The zeroth law"
+    quote: "\u201cA robot may not harm humanity, or, by inaction, allow humanity to come to harm.\u201d"
+    attribution: "\u2014 Isaac Asimov, <em>Robots and Empire</em>, 1985"
+    tagline: "A zeroth law doesn't replace the others. It governs them.<br>The foundational rule set for every AI-native framework in the Malstrom ecosystem."
+    cta:
+      explore: "Explore the frameworks"
+      github: "View on GitHub"
+  frameworks:
+    label: "Frameworks"
+    heading: "Built on the zeroth law"
+    body: "Every framework in the ecosystem inherits zeroth's rules \u2014 immutable logs, scenario-driven AI, single source of truth. Each one solves a different problem in knowledge work."
+  dojo:
+    question: "What is the gap between what I know<br>and what I need to know?"
+    desc: "AI-assisted learning. The AI acts as a sensei \u2014 tracks your knowledge state, works only on the gap, and never lets you skip the fundamentals."
+  aurora:
+    question: "What have I done, for whom,<br>and what do I need to do next?"
+    desc: "Professional memory. The AI remembers everything you have done across all clients \u2014 so every session starts exactly where the last one ended."
+  sudo:
+    question: "How do I find and land<br>the job I actually want?"
+    desc: "Job search management. Immutable pipeline log, full context across sessions, no re-briefing. The AI knows your full pipeline from the first session to the last."
+  common:
+    readme: "Read the README"
+  giskard:
+    label: "Validation"
+    heading: "giskard enforces the law"
+    body: "Every framework built on zeroth can be validated by giskard. If a repo violates the rules defined here, giskard catches it. No zeroth, no giskard. The law comes first."
+    cta: "View giskard on GitHub"
+  prereqs:
+    label: "Before you start"
+    heading: "What you need"
+    body: "All frameworks in this ecosystem run through Perplexity AI with the GitHub connector. You need two things before you begin."
+    pro:
+      name: "Perplexity Pro"
+      desc: "Required for the GitHub connector. The AI reads and writes your framework instance repo directly from the chat."
+    github:
+      name: "GitHub account"
+      desc: "Free. Each framework instance lives in its own GitHub repo \u2014 your data, your history, fully under your control."

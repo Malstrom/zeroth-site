@@ -17,10 +17,10 @@ en:
 
     problem:
       label: "The problem"
-      title: "Most language learning is theatre."
-      p1: "You finish a lesson. The app gives you a streak. You feel productive. Three weeks later you can't hold a five-minute conversation."
-      p2: "The system is optimised for retention of its own product — not for your actual fluency. It teaches what's easy to teach, not what you actually need."
-      p3: "dojo is built on a different premise: the AI tracks your real knowledge state, session after session, and only ever works on the gap between where you are and where you need to be."
+      title: "Most people learn a language for years without ever becoming fluent."
+      p1: "Not because they didn’t try. Because they were practising the wrong things — repeating what they already know instead of working on what’s actually missing."
+      p2: "dojo tracks your real knowledge state, session after session, and works only on the gap between where you are and where you need to be."
+      p3: "Whether you need technical vocabulary for work, conversational fluency, or academic writing — it adapts to your actual goal. No wasted time. Just the work that moves you forward."
 
     session:
       label: "A real session"

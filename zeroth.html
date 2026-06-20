@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>zeroth</title>
+  <meta name="description" content="The foundational law above all AI-native frameworks in the Malstrom ecosystem.">
+
+  <!-- GA4 placeholder — activate when ready -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script> -->
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    /* ─── TOKENS ─────────────────────────────────────── */
+    :root, [data-theme="light"] {
+      --color-bg:              #f7f6f2;
+      --color-surface:         #f9f8f5;
+      --color-surface-2:       #fbfbf9;
+      --color-surface-offset:  #f0ede8;
+      --color-divider:         #dcd9d5;
+      --color-border:          #d4d1ca;
+      --color-text:            #28251d;
+      --color-text-muted:      #6b6860;
+      --color-text-faint:      #b0aea9;
+      --color-primary:         #01696f;
+      --color-primary-hover:   #0c4e54;
+      --shadow-sm: 0 1px 3px oklch(0.2 0.01 80 / 0.06);
+      --shadow-md: 0 4px 16px oklch(0.2 0.01 80 / 0.08);
+      --radius-sm: 0.375rem;
+      --radius-md: 0.5rem;
+      --radius-lg: 0.75rem;
+      --radius-xl: 1rem;
+      --font-display: 'Instrument Serif', Georgia, serif;
+      --font-body:    'Geist', 'Helvetica Neue', sans-serif;
+      --font-mono:    'Geist Mono', 'Courier New', monospace;
+      --text-xs:   clamp(0.75rem,  0.7rem  + 0.25vw, 0.875rem);
+      --text-sm:   clamp(0.875rem, 0.8rem  + 0.35vw, 1rem);
+      --text-base: clamp(1rem,     0.95rem + 0.25vw, 1.125rem);
+      --text-lg:   clamp(1.125rem, 1rem    + 0.75vw, 1.5rem);
+      --text-xl:   clamp(1.5rem,   1.2rem  + 1.25vw, 2.25rem);
+      --text-2xl:  clamp(2rem,     1.2rem  + 2.5vw,  3.5rem);
+      --text-3xl:  clamp(2.5rem,   1rem    + 4vw,    5rem);
+      --space-1: 0.25rem; --space-2: 0.5rem; --space-3: 0.75rem;
+      --space-4: 1rem;    --space-5: 1.25rem; --space-6: 1.5rem;
+      --space-8: 2rem;    --space-10: 2.5rem; --space-12: 3rem;
+      --space-16: 4rem;   --space-20: 5rem;   --space-24: 6rem;
+      --content-narrow: 640px;
+      --content-default: 920px;
+      --content-wide: 1160px;
+      --transition: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    [data-theme="dark"] {
+      --color-bg:              #171614;
+      --color-surface:         #1c1b19;
+      --color-surface-2:       #201f1d;
+      --color-surface-offset:  #252422;
+      --color-divider:         #2e2d2b;
+      --color-border:          #393836;
+      --color-text:            #cdccca;
+      --color-text-muted:      #8a8885;
+      --color-text-faint:      #5a5957;
+      --color-primary:         #4f98a3;
+      --color-primary-hover:   #6db8c4;
+      --shadow-sm: 0 1px 3px oklch(0 0 0 / 0.25);
+      --shadow-md: 0 4px 16px oklch(0 0 0 / 0.35);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme]) {
+        --color-bg:#171614; --color-surface:#1c1b19; --color-surface-2:#201f1d;
+        --color-surface-offset:#252422; --color-divider:#2e2d2b; --color-border:#393836;
+        --color-text:#cdccca; --color-text-muted:#8a8885; --color-text-faint:#5a5957;
+        --color-primary:#4f98a3; --color-primary-hover:#6db8c4;
+        --shadow-sm:0 1px 3px oklch(0 0 0 / 0.25); --shadow-md:0 4px 16px oklch(0 0 0 / 0.35);
+      }
+    }
+
+    /* ─── BASE ───────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: var(--space-16);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      hanging-punctuation: first last;
+    }
+    body {
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      color: var(--color-text);
+      background: var(--color-bg);
+      min-height: 100dvh;
+      line-height: 1.65;
+    }
+    img { display:block; max-width:100%; height:auto; }
+    ul[role="list"] { list-style:none; }
+    h1,h2,h3,h4 { text-wrap:balance; line-height:1.15; }
+    p, li { text-wrap:pretty; max-width:68ch; }
+    a { color: inherit; text-decoration: none; transition: color var(--transition); }
+    button { cursor:pointer; background:none; border:none; font:inherit; color:inherit; }
+    :focus-visible { outline:2px solid var(--color-primary); outline-offset:3px; border-radius:var(--radius-sm); }
+    @media (prefers-reduced-motion: reduce) {
+      *,*::before,*::after { animation-duration:.01ms!important; transition-duration:.01ms!important; }
+    }
+
+    /* ─── LAYOUT HELPERS ─────────────────────────────── */
+    .container {
+      max-width: var(--content-default);
+      margin-inline: auto;
+      padding-inline: clamp(var(--space-4), 5vw, var(--space-12));
+    }
+    .container--narrow { max-width: var(--content-narrow); }
+    .divider { border: none; border-top: 1px solid var(--color-divider); margin: 0; }
+
+    /* ─── NAV ────────────────────────────────────────── */
+    .nav {
+      position: sticky; top: 0; z-index: 100;
+      background: color-mix(in oklch, var(--color-bg) 92%, transparent);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--color-divider);
+      padding-block: var(--space-4);
+    }
+    .nav__inner {
+      max-width: var(--content-wide);
+      margin-inline: auto;
+      padding-inline: clamp(var(--space-4), 5vw, var(--space-12));
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-4);
+    }
+    .nav__logo {
+      display: flex; align-items: center; gap: var(--space-2);
+      font-family: var(--font-mono); font-size: var(--text-sm); font-weight: 500;
+      letter-spacing: 0.02em; color: var(--color-text);
+      transition: color var(--transition);
+    }
+    .nav__logo:hover { color: var(--color-primary); }
+    .nav__actions { display:flex; align-items:center; gap: var(--space-3); }
+    .nav__link {
+      font-size: var(--text-sm); color: var(--color-text-muted);
+      display: flex; align-items: center; gap: var(--space-1);
+      transition: color var(--transition);
+    }
+    .nav__link:hover { color: var(--color-text); }
+    .nav__toggle {
+      width: 36px; height: 36px;
+      display: flex; align-items: center; justify-content: center;
+      border-radius: var(--radius-md); color: var(--color-text-muted);
+      transition: color var(--transition), background var(--transition);
+    }
+    .nav__toggle:hover { color: var(--color-text); background: var(--color-surface-offset); }
+
+    /* ─── HERO ───────────────────────────────────────── */
+    .hero {
+      padding-block: clamp(var(--space-16), 10vw, var(--space-24)) clamp(var(--space-12), 8vw, var(--space-20));
+      border-bottom: 1px solid var(--color-divider);
+    }
+    .hero__eyebrow {
+      font-family: var(--font-mono); font-size: var(--text-xs);
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--color-primary); margin-bottom: var(--space-8);
+    }
+    .hero__quote {
+      font-family: var(--font-display); font-style: italic;
+      font-size: var(--text-2xl); color: var(--color-text);
+      line-height: 1.25; max-width: 820px; margin-bottom: var(--space-6);
+    }
+    .hero__attribution {
+      font-size: var(--text-sm); color: var(--color-text-muted);
+      margin-bottom: var(--space-10);
+    }
+    .hero__attribution em { font-style: normal; }
+    .hero__tagline {
+      font-size: var(--text-lg); color: var(--color-text-muted);
+      max-width: 56ch; margin-bottom: var(--space-10); line-height: 1.55;
+    }
+    .hero__cta-group { display:flex; align-items:center; gap: var(--space-4); flex-wrap:wrap; }
+    .btn {
+      display: inline-flex; align-items: center; gap: var(--space-2);
+      padding: var(--space-3) var(--space-6);
+      font-size: var(--text-sm); font-weight: 500;
+      border-radius: var(--radius-md);
+      transition: background var(--transition), color var(--transition), box-shadow var(--transition);
+    }
+    .btn--primary { background: var(--color-text); color: var(--color-bg); }
+    .btn--primary:hover { background: color-mix(in oklch, var(--color-text) 85%, var(--color-primary)); }
+    .btn--ghost { color: var(--color-text-muted); border: 1px solid var(--color-border); }
+    .btn--ghost:hover { color: var(--color-text); background: var(--color-surface-offset); }
+
+    /* ─── SECTION SHARED ─────────────────────────────── */
+    .section { padding-block: clamp(var(--space-12), 8vw, var(--space-20)); }
+    .section__label {
+      font-family: var(--font-mono); font-size: var(--text-xs);
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--color-text-faint); margin-bottom: var(--space-6);
+    }
+    .section__heading {
+      font-family: var(--font-display); font-size: var(--text-xl);
+      color: var(--color-text); margin-bottom: var(--space-4);
+    }
+    .section__body {
+      font-size: var(--text-base); color: var(--color-text-muted);
+      max-width: 60ch; line-height: 1.7;
+    }
+
+    /* ─── FRAMEWORKS ─────────────────────────────────── */
+    .frameworks { border-bottom: 1px solid var(--color-divider); }
+    .frameworks__header { margin-bottom: var(--space-10); }
+    .frameworks__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr));
+      gap: var(--space-4);
+      margin-bottom: var(--space-8);
+    }
+    .framework-card {
+      background: var(--color-surface);
+      border: 1px solid oklch(from var(--color-text) l c h / 0.08);
+      border-radius: var(--radius-xl);
+      padding: var(--space-8);
+      display: flex; flex-direction: column; gap: var(--space-4);
+      transition: box-shadow var(--transition), border-color var(--transition);
+    }
+    .framework-card:hover { box-shadow: var(--shadow-md); border-color: oklch(from var(--color-text) l c h / 0.14); }
+    .framework-card__name {
+      font-family: var(--font-mono); font-size: var(--text-sm);
+      font-weight: 500; color: var(--color-text);
+    }
+    .framework-card__tagline {
+      font-family: var(--font-display); font-style: italic;
+      font-size: var(--text-lg); color: var(--color-text);
+      line-height: 1.3; flex: 1;
+    }
+    .framework-card__desc {
+      font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.6;
+    }
+    .framework-card__link {
+      display: inline-flex; align-items: center; gap: var(--space-1);
+      font-size: var(--text-sm); color: var(--color-primary);
+      transition: color var(--transition); margin-top: auto;
+    }
+    .framework-card__link:hover { color: var(--color-primary-hover); }
+
+    /* ─── GISKARD ────────────────────────────────────── */
+    .giskard { border-bottom: 1px solid var(--color-divider); }
+    .giskard__inner {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: var(--space-16); align-items: center;
+    }
+    .giskard__mono {
+      font-family: var(--font-mono); font-size: var(--text-xs);
+      color: var(--color-text-faint);
+      background: var(--color-surface-offset);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-6) var(--space-8);
+      line-height: 1.8;
+    }
+    .giskard__mono .ok { color: var(--color-primary); }
+    .giskard__mono .err { color: #a12c7b; }
+    .giskard__mono .dim { color: var(--color-text-faint); }
+    @media (max-width: 700px) {
+      .giskard__inner { grid-template-columns: 1fr; }
+      .giskard__mono { display: none; }
+    }
+
+    /* ─── PREREQUISITES ──────────────────────────────── */
+    .prereqs { border-bottom: 1px solid var(--color-divider); }
+    .prereqs__list {
+      display: flex; flex-direction: column; gap: var(--space-4);
+      margin-top: var(--space-8); max-width: var(--content-narrow);
+    }
+    .prereq-item {
+      display: flex; gap: var(--space-4); align-items: flex-start;
+      padding: var(--space-5) var(--space-6);
+      background: var(--color-surface);
+      border: 1px solid oklch(from var(--color-text) l c h / 0.08);
+      border-radius: var(--radius-lg);
+    }
+    .prereq-item__icon {
+      width: 36px; height: 36px; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      background: var(--color-surface-offset); border-radius: var(--radius-md);
+      color: var(--color-text-muted);
+    }
+    .prereq-item__name { font-size: var(--text-sm); font-weight: 600; color: var(--color-text); margin-bottom: var(--space-1); }
+    .prereq-item__desc { font-size: var(--text-sm); color: var(--color-text-muted); max-width: 48ch; }
+    .prereq-item__link {
+      font-size: var(--text-xs); color: var(--color-primary);
+      margin-top: var(--space-2); display: inline-block;
+      transition: color var(--transition);
+    }
+    .prereq-item__link:hover { color: var(--color-primary-hover); }
+
+    /* ─── FOOTER ─────────────────────────────────────── */
+    .footer { padding-block: var(--space-12); color: var(--color-text-faint); }
+    .footer__inner {
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: var(--space-4);
+    }
+    .footer__left { font-family: var(--font-mono); font-size: var(--text-xs); letter-spacing: 0.05em; }
+    .footer__links { display: flex; gap: var(--space-6); }
+    .footer__links a { font-size: var(--text-xs); color: var(--color-text-faint); transition: color var(--transition); }
+    .footer__links a:hover { color: var(--color-text-muted); }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="#" class="nav__logo" aria-label="zeroth home">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/>
+          <circle cx="10" cy="10" r="3" fill="currentColor"/>
+          <line x1="10" y1="2" x2="10" y2="6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="10" y1="14" x2="10" y2="18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="2" y1="10" x2="6" y2="10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="14" y1="10" x2="18" y2="10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        zeroth
+      </a>
+      <div class="nav__actions">
+        <a href="https://github.com/Malstrom/zeroth" target="_blank" rel="noopener noreferrer" class="nav__link" data-i18n="nav.github">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+          GitHub
+        </a>
+        <button class="nav__toggle" data-theme-toggle aria-label="Switch to dark mode">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="container">
+        <p class="hero__eyebrow" data-i18n="hero.eyebrow">The zeroth law</p>
+        <blockquote class="hero__quote" id="hero-heading">
+          “A robot may not harm humanity, or, by inaction, allow humanity to come to harm.”
+        </blockquote>
+        <p class="hero__attribution">
+          — Isaac Asimov, <em>Robots and Empire</em>, 1985
+        </p>
+        <p class="hero__tagline" data-i18n="hero.tagline">
+          A zeroth law doesn’t replace the others. It governs them.<br>
+          This is the spec and foundational rule set for every AI-native framework in the Malstrom ecosystem.
+        </p>
+        <div class="hero__cta-group">
+          <a href="#frameworks" class="btn btn--primary" data-i18n="hero.cta_primary">
+            Explore the frameworks
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="https://github.com/Malstrom/zeroth" target="_blank" rel="noopener noreferrer" class="btn btn--ghost" data-i18n="hero.cta_secondary">
+            View on GitHub
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FRAMEWORKS -->
+    <section class="section frameworks" id="frameworks" aria-labelledby="frameworks-heading">
+      <div class="container">
+        <div class="frameworks__header">
+          <p class="section__label" data-i18n="frameworks.label">Frameworks</p>
+          <h2 class="section__heading" id="frameworks-heading" data-i18n="frameworks.heading">Built on the zeroth law</h2>
+          <p class="section__body" data-i18n="frameworks.body">
+            Every framework in the ecosystem inherits zeroth’s rules — immutable logs, scenario-driven AI, single source of truth. Each one solves a different problem in knowledge work.
+          </p>
+        </div>
+        <div class="frameworks__grid" role="list">
+
+          <article class="framework-card" role="listitem" data-framework="dojo">
+            <span class="framework-card__name">dojo</span>
+            <p class="framework-card__tagline">“What is the gap between what I know and what I need to know?”</p>
+            <p class="framework-card__desc">AI-assisted learning. The AI acts as a sensei — tracks your knowledge state, works only on the gap, and never lets you skip the fundamentals.</p>
+            <a href="https://github.com/Malstrom/zeroth/blob/main/frameworks/dojo/README.md" target="_blank" rel="noopener noreferrer" class="framework-card__link">
+              Read the README
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+            </a>
+          </article>
+
+          <article class="framework-card" role="listitem" data-framework="aurora">
+            <span class="framework-card__name">aurora</span>
+            <p class="framework-card__tagline">“What have I done, for whom, and what do I need to do next?”</p>
+            <p class="framework-card__desc">Professional memory. The AI remembers everything you have done across all clients — so every session starts exactly where the last one ended.</p>
+            <a href="https://github.com/Malstrom/zeroth/blob/main/frameworks/aurora/README.md" target="_blank" rel="noopener noreferrer" class="framework-card__link">
+              Read the README
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+            </a>
+          </article>
+
+          <article class="framework-card" role="listitem" data-framework="sudo-hire-me">
+            <span class="framework-card__name">sudo-hire-me</span>
+            <p class="framework-card__tagline">“How do I find and land the job I actually want?”</p>
+            <p class="framework-card__desc">Job search management. Immutable pipeline log, full context across sessions, no re-briefing. The AI knows your full pipeline from the first session to the last.</p>
+            <a href="https://github.com/Malstrom/zeroth/blob/main/frameworks/sudo-hire-me/README.md" target="_blank" rel="noopener noreferrer" class="framework-card__link">
+              Read the README
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+            </a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- GISKARD -->
+    <section class="section giskard" id="giskard" aria-labelledby="giskard-heading">
+      <div class="container">
+        <div class="giskard__inner">
+          <div>
+            <p class="section__label" data-i18n="giskard.label">Validation</p>
+            <h2 class="section__heading" id="giskard-heading" data-i18n="giskard.heading">giskard enforces the law</h2>
+            <p class="section__body" data-i18n="giskard.body">
+              Every framework built on zeroth can be validated by giskard. If a repo violates the rules defined here, giskard catches it. No zeroth, no giskard. The law comes first.
+            </p>
+            <a href="https://github.com/Malstrom/giskard" target="_blank" rel="noopener noreferrer" class="btn btn--ghost" style="margin-top: var(--space-8); display:inline-flex;" data-i18n="giskard.cta">
+              View giskard on GitHub
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+            </a>
+          </div>
+          <pre class="giskard__mono" aria-label="giskard validation output example" role="img">
+<span class="dim">$ giskard validate ./dojo-instance</span>
+
+<span class="ok">✓</span> .agent.yml — found
+<span class="ok">✓</span> .scenarios.yml — found
+<span class="ok">✓</span> hard_rules block — present
+<span class="ok">✓</span> .registry.yml — found
+<span class="ok">✓</span> log immutability — enforced
+<span class="ok">✓</span> block order — valid
+
+<span class="ok">All checks passed.</span>
+<span class="dim">Framework: dojo  zeroth: v1</span>
+          </pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- PREREQUISITES -->
+    <section class="section prereqs" id="prerequisites" aria-labelledby="prereqs-heading">
+      <div class="container">
+        <p class="section__label" data-i18n="prereqs.label">Before you start</p>
+        <h2 class="section__heading" id="prereqs-heading" data-i18n="prereqs.heading">What you need</h2>
+        <p class="section__body" data-i18n="prereqs.body">
+          All frameworks in this ecosystem run through Perplexity AI with the GitHub connector. You need two things before you begin.
+        </p>
+        <ul class="prereqs__list" role="list">
+          <li class="prereq-item">
+            <div class="prereq-item__icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+            </div>
+            <div>
+              <p class="prereq-item__name" data-i18n="prereqs.perplexity.name">Perplexity Pro</p>
+              <p class="prereq-item__desc" data-i18n="prereqs.perplexity.desc">Required for the GitHub connector. The AI reads and writes your framework instance repo directly from the chat.</p>
+              <a href="https://perplexity.ai/pro" target="_blank" rel="noopener noreferrer" class="prereq-item__link">perplexity.ai/pro →</a>
+            </div>
+          </li>
+          <li class="prereq-item">
+            <div class="prereq-item__icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            </div>
+            <div>
+              <p class="prereq-item__name" data-i18n="prereqs.github.name">GitHub account</p>
+              <p class="prereq-item__desc" data-i18n="prereqs.github.desc">Free. Each framework instance lives in its own GitHub repo — your data, your history, fully under your control.</p>
+              <a href="https://github.com/signup" target="_blank" rel="noopener noreferrer" class="prereq-item__link">github.com/signup →</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <span class="footer__left">zeroth / MIT</span>
+        <nav class="footer__links" aria-label="Footer links">
+          <a href="https://github.com/Malstrom/zeroth" target="_blank" rel="noopener noreferrer">zeroth</a>
+          <a href="https://github.com/Malstrom/giskard" target="_blank" rel="noopener noreferrer">giskard</a>
+          <a href="https://github.com/Malstrom" target="_blank" rel="noopener noreferrer">Malstrom</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function(){
+      const t = document.querySelector('[data-theme-toggle]');
+      const r = document.documentElement;
+      let d = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      r.setAttribute('data-theme', d);
+      const sunIcon = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>';
+      const moonIcon = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+      if(t) {
+        t.innerHTML = d === 'dark' ? sunIcon : moonIcon;
+        t.addEventListener('click', () => {
+          d = d === 'dark' ? 'light' : 'dark';
+          r.setAttribute('data-theme', d);
+          t.setAttribute('aria-label', 'Switch to ' + (d === 'dark' ? 'light' : 'dark') + ' mode');
+          t.innerHTML = d === 'dark' ? sunIcon : moonIcon;
+        });
+      }
+    })();
+
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if(target) { e.preventDefault(); target.scrollIntoView({behavior:'smooth'}); }
+      });
+    });
+  </script>
+
+</body>
+</html>

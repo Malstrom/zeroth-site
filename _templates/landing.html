@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="meta.title"></title>
+  <meta name="description" data-i18n-attr="meta.description">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<!--
+  TEMPLATE: landing.html
+  USE FOR: target landing pages (e.g. dojo/developer.html, dojo/student.html)
+           and framework index pages (aurora/index.html, sudo-hire-me/index.html)
+
+  AFTER COPYING:
+    1. Update data-page on <body> (e.g. data-page="developer")
+    2. Update loader path: ./assets/js/i18n.js -> ../assets/js/i18n.js
+    3. Update all href paths (zeroth.html -> ../zeroth.html, etc.)
+    4. If aurora/sudo-hire-me: remove the Why nav link
+    5. Never write text directly in HTML — all text goes in YAML
+
+  CONTENT SOURCES (read before writing YAML):
+    hero           -> frameworks/{fw}/README.md (first section), adapt for target
+    problem        -> frameworks/{fw}/README.md + overview.yml, adapt for target
+    how            -> frameworks/{fw}/structure.yml
+    story          -> frameworks/{fw}/scenarios/{scenario}.yml -> on:, steps:
+-->
+<body data-page="__template__">
+
+  <!-- NAVBAR — Variant A (dojo, has Why + How)
+       For aurora / sudo-hire-me: remove the Why link -->
+  <nav class="nav" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="./zeroth.html" class="nav__logo" aria-label="zeroth home">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/>
+          <circle cx="10" cy="10" r="2.5" fill="currentColor"/>
+          <line x1="10" y1="2" x2="10" y2="5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="10" y1="14.5" x2="10" y2="18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="2" y1="10" x2="5.5" y2="10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="14.5" y1="10" x2="18" y2="10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        zeroth
+      </a>
+      <div class="nav__actions">
+        <span class="nav__framework-name" data-i18n="nav.framework_name"></span>
+        <!-- Remove this link for aurora / sudo-hire-me -->
+        <a href="./why.html" class="nav__link" data-i18n="nav.why">Why</a>
+        <a href="./scenarios.html" class="nav__link" data-i18n="nav.scenarios">Scenarios</a>
+        <a href="./start.html" class="nav__link" data-i18n="nav.start">Start</a>
+        <button class="nav__lang" data-lang-toggle aria-label="Switch language">EN / RU</button>
+        <button class="nav__toggle" data-theme-toggle aria-label="Switch to dark mode">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- [1] HERO
+         RULE: no CTA in hero — user reads first
+         eyebrow: framework name in Geist Mono uppercase
+         headline: guiding question, specific for this target
+         tagline: 1 sentence — what it does, not how
+         SOURCE: frameworks/{fw}/README.md first section, adapt for target -->
+    <section class="hero" id="hero" aria-labelledby="hero-heading">
+      <div class="container">
+        <p class="hero__eyebrow" data-i18n="hero.eyebrow"></p>
+        <h1 class="hero__headline" id="hero-heading" data-i18n="hero.headline"></h1>
+        <p class="hero__tagline" data-i18n="hero.tagline"></p>
+      </div>
+    </section>
+
+    <!-- [2] THE PROBLEM
+         RULE: no bullets, no lists — editorial paragraphs only
+         RULE: name the pain without naming the solution
+         tone: "you know this feeling?" — not technical
+         SOURCE: frameworks/{fw}/README.md + overview.yml, adapt for target -->
+    <section class="section problem" id="problem" aria-labelledby="problem-heading">
+      <div class="container">
+        <h2 class="section__heading" id="problem-heading" data-i18n="problem.heading"></h2>
+        <p class="section__body" data-i18n="problem.body_1"></p>
+        <p class="section__body" data-i18n="problem.body_2"></p>
+        <p class="section__body" data-i18n="problem.body_3"></p>
+      </div>
+    </section>
+
+    <!-- [3] HOW IT WORKS
+         RULE: principles numbered 01/02/03 — no colored icons
+         RULE: mechanism in one sentence per principle
+         SOURCE: frameworks/{fw}/structure.yml -->
+    <section class="section how" id="how" aria-labelledby="how-heading">
+      <div class="container">
+        <h2 class="section__heading" id="how-heading" data-i18n="how.heading"></h2>
+        <ol class="principles" role="list">
+          <li class="principle">
+            <span class="principle__num" aria-hidden="true">01</span>
+            <div>
+              <strong class="principle__title" data-i18n="how.principle_01_title"></strong>
+              <p class="principle__body" data-i18n="how.principle_01_body"></p>
+            </div>
+          </li>
+          <li class="principle">
+            <span class="principle__num" aria-hidden="true">02</span>
+            <div>
+              <strong class="principle__title" data-i18n="how.principle_02_title"></strong>
+              <p class="principle__body" data-i18n="how.principle_02_body"></p>
+            </div>
+          </li>
+          <li class="principle">
+            <span class="principle__num" aria-hidden="true">03</span>
+            <div>
+              <strong class="principle__title" data-i18n="how.principle_03_title"></strong>
+              <p class="principle__body" data-i18n="how.principle_03_body"></p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- [4] STORY
+         RULE: zero internal technical terms (no nikki, kata, kiroku, etc.)
+         RULE: trigger phrase must be specific to this target
+         RULE: 5 beats from the user's perspective
+         SOURCE: frameworks/{fw}/scenarios/{scenario}.yml -> on:, steps: -->
+    <section class="section story" id="story" aria-labelledby="story-heading">
+      <div class="container">
+        <h2 class="section__heading" id="story-heading" data-i18n="story.heading"></h2>
+        <div class="beats">
+          <div class="beat">
+            <span class="beat__label" data-i18n="story.beat_01_label"></span>
+            <p class="beat__text" data-i18n="story.beat_01_text"></p>
+          </div>
+          <div class="beat">
+            <span class="beat__label" data-i18n="story.beat_02_label"></span>
+            <p class="beat__text" data-i18n="story.beat_02_text"></p>
+          </div>
+          <div class="beat">
+            <span class="beat__label" data-i18n="story.beat_03_label"></span>
+            <p class="beat__text" data-i18n="story.beat_03_text"></p>
+          </div>
+          <div class="beat">
+            <span class="beat__label" data-i18n="story.beat_04_label"></span>
+            <p class="beat__text" data-i18n="story.beat_04_text"></p>
+          </div>
+          <div class="beat">
+            <span class="beat__label" data-i18n="story.beat_05_label"></span>
+            <p class="beat__text" data-i18n="story.beat_05_text"></p>
+          </div>
+        </div>
+        <a href="./scenarios.html" class="btn btn--primary" data-i18n="story.cta"></a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <span class="footer__left" data-i18n="footer.copy"></span>
+        <nav class="footer__links" aria-label="Footer links">
+          <a href="./zeroth.html" data-i18n="footer.link_zeroth">zeroth</a>
+          <a href="https://github.com/Malstrom/zeroth" target="_blank" rel="noopener noreferrer" data-i18n="footer.link_github">GitHub</a>
+          <a href="./scenarios.html" data-i18n="footer.link_scenarios">Scenarios</a>
+          <a href="./start.html" data-i18n="footer.link_start">Start</a>
+        </nav>
+        <div class="footer__toggles">
+          <button class="nav__lang" data-lang-toggle aria-label="Switch language">EN / RU</button>
+          <button class="nav__toggle" data-theme-toggle aria-label="Switch to dark mode">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/js-yaml@4/dist/js.yaml.min.js"></script>
+  <script src="./assets/js/i18n.js"></script>
+
+  <!-- Dark/light toggle (inline fallback until i18n.js is active) -->
+  <script>
+    (function(){
+      const r = document.documentElement;
+      const toggles = document.querySelectorAll('[data-theme-toggle]');
+      const sun = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>';
+      const moon = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+      let theme = matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light';
+      r.setAttribute('data-theme', theme);
+      toggles.forEach(btn => {
+        btn.innerHTML = theme === 'dark' ? sun : moon;
+        btn.addEventListener('click', () => {
+          theme = theme === 'dark' ? 'light' : 'dark';
+          r.setAttribute('data-theme', theme);
+          toggles.forEach(b => {
+            b.setAttribute('aria-label', 'Switch to ' + (theme === 'dark' ? 'light' : 'dark') + ' mode');
+            b.innerHTML = theme === 'dark' ? sun : moon;
+          });
+        });
+      });
+    })();
+  </script>
+
+</body>
+</html>

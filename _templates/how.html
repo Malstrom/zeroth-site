@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="meta.title"></title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<!--
+  TEMPLATE: how.html
+  USE FOR: dojo/how.html ONLY
+  This page exists only for dojo. Aurora and sudo-hire-me do not have a how page.
+
+  AFTER COPYING:
+    1. Update data-page on <body> (data-page="how")
+    2. Update loader path: ./assets/js/i18n.js -> ../assets/js/i18n.js
+    3. Update all href paths
+
+  CONTENT SOURCES:
+    components     -> frameworks/dojo/structure.yml
+    loop           -> frameworks/dojo/structure.yml
+    output         -> frameworks/dojo/structure.yml + scenarios/*.yml
+    RULE: introduce every technical term before using it
+    RULE: no internal jargon (nikki, kata, etc.) — translate to human language
+    RULE: editorial paragraphs, no bullets
+-->
+<body data-page="how">
+
+  <!-- NAVBAR — dojo variant, Why link present -->
+  <nav class="nav" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="./zeroth.html" class="nav__logo" aria-label="zeroth home">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/>
+          <circle cx="10" cy="10" r="2.5" fill="currentColor"/>
+          <line x1="10" y1="2" x2="10" y2="5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="10" y1="14.5" x2="10" y2="18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="2" y1="10" x2="5.5" y2="10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="14.5" y1="10" x2="18" y2="10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        zeroth
+      </a>
+      <div class="nav__actions">
+        <span class="nav__framework-name" data-i18n="nav.framework_name"></span>
+        <a href="./why.html" class="nav__link" data-i18n="nav.why">Why</a>
+        <a href="./scenarios.html" class="nav__link" data-i18n="nav.scenarios">Scenarios</a>
+        <a href="./start.html" class="nav__link" data-i18n="nav.start">Start</a>
+        <button class="nav__lang" data-lang-toggle aria-label="Switch language">EN / RU</button>
+        <button class="nav__toggle" data-theme-toggle aria-label="Switch to dark mode">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- HERO — minimal
+         SOURCE: frameworks/dojo/structure.yml -->
+    <section class="hero" id="hero" aria-labelledby="how-heading">
+      <div class="container">
+        <p class="hero__eyebrow" data-i18n="nav.framework_name"></p>
+        <h1 class="hero__headline" id="how-heading" data-i18n="hero.heading"></h1>
+        <p class="hero__tagline" data-i18n="hero.tagline"></p>
+      </div>
+    </section>
+
+    <!-- [1] THE COMPONENTS
+         Introduce each concept before using it.
+         Use human language, not internal names.
+         SOURCE: frameworks/dojo/structure.yml -->
+    <section class="section" id="components" aria-labelledby="components-heading">
+      <div class="container container--narrow">
+        <h2 class="section__heading" id="components-heading" data-i18n="components.heading"></h2>
+        <p class="section__body" data-i18n="components.intro"></p>
+        <!-- Component items: generated from YAML or written as static editorial -->
+        <!-- Each component: short name + what it is in plain language -->
+        <dl class="components-list">
+          <div class="component-item">
+            <dt class="component-item__name" data-i18n="components.item_01_name"></dt>
+            <dd class="component-item__desc" data-i18n="components.item_01_desc"></dd>
+          </div>
+          <div class="component-item">
+            <dt class="component-item__name" data-i18n="components.item_02_name"></dt>
+            <dd class="component-item__desc" data-i18n="components.item_02_desc"></dd>
+          </div>
+          <div class="component-item">
+            <dt class="component-item__name" data-i18n="components.item_03_name"></dt>
+            <dd class="component-item__desc" data-i18n="components.item_03_desc"></dd>
+          </div>
+          <div class="component-item">
+            <dt class="component-item__name" data-i18n="components.item_04_name"></dt>
+            <dd class="component-item__desc" data-i18n="components.item_04_desc"></dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- [2] THE SESSION LOOP
+         Walk through a typical session from start to finish.
+         SOURCE: frameworks/dojo/structure.yml -->
+    <section class="section" id="loop" aria-labelledby="loop-heading">
+      <div class="container container--narrow">
+        <h2 class="section__heading" id="loop-heading" data-i18n="loop.heading"></h2>
+        <p class="section__body" data-i18n="loop.body_1"></p>
+        <p class="section__body" data-i18n="loop.body_2"></p>
+        <p class="section__body" data-i18n="loop.body_3"></p>
+      </div>
+    </section>
+
+    <!-- [3] WHAT REMAINS
+         What is saved after each session and how it's used next time.
+         SOURCE: frameworks/dojo/structure.yml + scenarios/*.yml -->
+    <section class="section" id="output" aria-labelledby="output-heading">
+      <div class="container container--narrow">
+        <h2 class="section__heading" id="output-heading" data-i18n="output.heading"></h2>
+        <p class="section__body" data-i18n="output.body_1"></p>
+        <p class="section__body" data-i18n="output.body_2"></p>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section" id="cta">
+      <div class="container">
+        <a href="./scenarios.html" class="btn btn--primary" data-i18n="cta.scenarios"></a>
+        <a href="./start.html" class="btn btn--ghost" data-i18n="cta.start"></a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <span class="footer__left" data-i18n="footer.copy"></span>
+        <nav class="footer__links" aria-label="Footer links">
+          <a href="./zeroth.html" data-i18n="footer.link_zeroth">zeroth</a>
+          <a href="https://github.com/Malstrom/zeroth" target="_blank" rel="noopener noreferrer" data-i18n="footer.link_github">GitHub</a>
+          <a href="./scenarios.html" data-i18n="footer.link_scenarios">Scenarios</a>
+          <a href="./start.html" data-i18n="footer.link_start">Start</a>
+        </nav>
+        <div class="footer__toggles">
+          <button class="nav__lang" data-lang-toggle aria-label="Switch language">EN / RU</button>
+          <button class="nav__toggle" data-theme-toggle aria-label="Switch to dark mode">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/js-yaml@4/dist/js.yaml.min.js"></script>
+  <script src="./assets/js/i18n.js"></script>
+  <script>
+    (function(){
+      const r = document.documentElement;
+      const toggles = document.querySelectorAll('[data-theme-toggle]');
+      const sun = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>';
+      const moon = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+      let theme = matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light';
+      r.setAttribute('data-theme', theme);
+      toggles.forEach(btn => {
+        btn.innerHTML = theme === 'dark' ? sun : moon;
+        btn.addEventListener('click', () => {
+          theme = theme === 'dark' ? 'light' : 'dark';
+          r.setAttribute('data-theme', theme);
+          toggles.forEach(b => { b.innerHTML = theme === 'dark' ? sun : moon; });
+        });
+      });
+    })();
+  </script>
+
+</body>
+</html>

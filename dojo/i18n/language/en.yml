@@ -43,6 +43,40 @@ en:
     cta:
       scenarios: "Explore all scenarios →"
 
+  scenarios:
+    hero:
+      eyebrow: "dojo / scenarios"
+      title: "Every session follows a scenario."
+      body: "dojo doesn’t work freestyle. Each interaction maps to a defined scenario — so the AI always knows what it’s doing and why."
+    list:
+      label: "The scenarios"
+      title: "What dojo can do."
+    study_open:
+      title: "Study a topic"
+      desc: "Open a study session on any topic. dojo reads your existing gaps, teaches the concepts, and runs a drill after each one."
+      trigger: "› study passato prossimo vs imperfetto"
+    randori:
+      title: "Drill and practice"
+      desc: "Quiz yourself on what you’ve just learned. dojo asks reasoning questions and updates your gap map in real time."
+      trigger: "› quiz me on this"
+    declare_goal:
+      title: "Set a learning goal"
+      desc: "Declare what you want to achieve — a language level, a job requirement, a specific project. dojo maps the required topics and tracks your progress."
+      trigger: "› I want to reach B2 in Italian"
+    evaluate_readiness:
+      title: "Check readiness"
+      desc: "After studying, dojo evaluates whether you’re ready for an exam or if there are still gaps to close first."
+      trigger: "› am I ready for the exam?"
+    topic_shinsa:
+      title: "Topic exam"
+      desc: "Formal exam on a single topic. No feedback during the test — only a final score and a gap report."
+      trigger: "› shinsa on passato prossimo"
+    goal_shinsa:
+      title: "Goal exam"
+      desc: "The final exam for your declared goal. Pass with 80%+ and dojo issues a makimono — a permanent record of your achievement."
+      trigger: "› I’m ready for my Italian B2 exam"
+    cta: "Start now →"
+
   wip:
     title: "Coming soon."
     body: "This page is a work in progress. Check back later."

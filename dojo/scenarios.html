@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/base.css">
   <link rel="stylesheet" href="css/dojo_base.css">
+  <link rel="stylesheet" href="css/scenarios.css">
 </head>
 <body>
   <nav class="nav" aria-label="Primary navigation">
@@ -34,13 +35,76 @@
   </nav>
 
   <main>
-    <section class="page-hero" aria-labelledby="page-title">
+
+    <section class="page-hero" aria-labelledby="scenarios-title">
       <div class="container">
-        <p class="page-hero__eyebrow" data-i18n="nav.framework_name"></p>
-        <h1 class="page-hero__title" id="page-title" data-i18n="wip.title"></h1>
-        <p class="page-hero__body" data-i18n="wip.body"></p>
+        <p class="page-hero__eyebrow" data-i18n="scenarios.hero.eyebrow"></p>
+        <h1 class="page-hero__title" id="scenarios-title" data-i18n="scenarios.hero.title"></h1>
+        <p class="page-hero__body" data-i18n="scenarios.hero.body"></p>
       </div>
     </section>
+
+    <section class="section" aria-labelledby="scenarios-list-title">
+      <div class="container">
+        <p class="section__label" data-i18n="scenarios.list.label"></p>
+        <h2 class="section__heading" id="scenarios-list-title" data-i18n="scenarios.list.title"></h2>
+
+        <div class="scenario-grid">
+
+          <article class="scenario-card">
+            <span class="scenario-card__id">study_open</span>
+            <h3 class="scenario-card__title" data-i18n="scenarios.study_open.title"></h3>
+            <p class="scenario-card__desc" data-i18n="scenarios.study_open.desc"></p>
+            <p class="scenario-card__trigger" data-i18n="scenarios.study_open.trigger"></p>
+          </article>
+
+          <article class="scenario-card">
+            <span class="scenario-card__id">randori</span>
+            <h3 class="scenario-card__title" data-i18n="scenarios.randori.title"></h3>
+            <p class="scenario-card__desc" data-i18n="scenarios.randori.desc"></p>
+            <p class="scenario-card__trigger" data-i18n="scenarios.randori.trigger"></p>
+          </article>
+
+          <article class="scenario-card">
+            <span class="scenario-card__id">declare_goal</span>
+            <h3 class="scenario-card__title" data-i18n="scenarios.declare_goal.title"></h3>
+            <p class="scenario-card__desc" data-i18n="scenarios.declare_goal.desc"></p>
+            <p class="scenario-card__trigger" data-i18n="scenarios.declare_goal.trigger"></p>
+          </article>
+
+          <article class="scenario-card">
+            <span class="scenario-card__id">evaluate_readiness</span>
+            <h3 class="scenario-card__title" data-i18n="scenarios.evaluate_readiness.title"></h3>
+            <p class="scenario-card__desc" data-i18n="scenarios.evaluate_readiness.desc"></p>
+            <p class="scenario-card__trigger" data-i18n="scenarios.evaluate_readiness.trigger"></p>
+          </article>
+
+          <article class="scenario-card">
+            <span class="scenario-card__id">topic_shinsa</span>
+            <h3 class="scenario-card__title" data-i18n="scenarios.topic_shinsa.title"></h3>
+            <p class="scenario-card__desc" data-i18n="scenarios.topic_shinsa.desc"></p>
+            <p class="scenario-card__trigger" data-i18n="scenarios.topic_shinsa.trigger"></p>
+          </article>
+
+          <article class="scenario-card">
+            <span class="scenario-card__id">goal_shinsa</span>
+            <h3 class="scenario-card__title" data-i18n="scenarios.goal_shinsa.title"></h3>
+            <p class="scenario-card__desc" data-i18n="scenarios.goal_shinsa.desc"></p>
+            <p class="scenario-card__trigger" data-i18n="scenarios.goal_shinsa.trigger"></p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section__cta">
+          <a href="start.html" class="btn btn--primary" data-i18n="scenarios.cta"></a>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer class="footer">

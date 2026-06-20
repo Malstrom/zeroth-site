@@ -1,0 +1,88 @@
+/* scenarios.css — dojo/scenarios.html */
+
+/* ── Scenario grid ─────────────────────────────────────────────────── */
+
+.scenario-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-5);
+  margin-top: var(--space-8);
+}
+
+.scenario-card {
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  gap: var(--space-3);
+  padding: var(--space-6);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  transition: border-color 0.15s ease;
+}
+
+.scenario-card:hover {
+  border-color: color-mix(in oklch, var(--color-primary) 40%, var(--color-border));
+}
+
+.scenario-card__id {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.08em;
+  color: var(--color-primary);
+  background: color-mix(in oklch, var(--color-primary) 10%, var(--color-bg));
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius-sm);
+  width: fit-content;
+}
+
+.scenario-card__title {
+  font-size: var(--text-base);
+  font-weight: 500;
+  color: var(--color-text);
+  letter-spacing: -0.01em;
+}
+
+.scenario-card__desc {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+.scenario-card__trigger {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--color-divider);
+  line-height: 1.5;
+}
+
+/* ── CTA ─────────────────────────────────────────────────────────────── */
+
+.section__cta {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn--primary {
+  background: var(--color-primary);
+  color: #fff;
+  border-color: var(--color-primary);
+  font-weight: 500;
+}
+
+.btn--primary:hover {
+  opacity: 0.85;
+  color: #fff;
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+@media (max-width: 700px) {
+  .scenario-grid {
+    grid-template-columns: 1fr;
+  }
+  .section__cta {
+    justify-content: flex-start;
+  }
+}

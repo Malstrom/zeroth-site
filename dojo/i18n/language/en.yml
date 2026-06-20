@@ -18,40 +18,30 @@ en:
     problem:
       label: "The problem"
       title: "Most language learning is theatre."
-      p1: "You finish a lesson. The app gives you a streak. You feel productive. Three weeks later you can’t hold a five-minute conversation."
-      p2: "The system is optimised for retention of its own product — not for your actual fluency. It teaches what’s easy to teach, not what you actually need."
+      p1: "You finish a lesson. The app gives you a streak. You feel productive. Three weeks later you can't hold a five-minute conversation."
+      p2: "The system is optimised for retention of its own product — not for your actual fluency. It teaches what's easy to teach, not what you actually need."
       p3: "dojo is built on a different premise: the AI tracks your real knowledge state, session after session, and only ever works on the gap between where you are and where you need to be."
 
     session:
-      label: "A real session"
-      title: "This is what dojo looks like."
-      user_msg: "ciao, riprendiamo a studiare italiano"
-      ai_meta1: "↳ reading last session log..."
-      ai_meta2: "↳ gap identified: passato prossimo vs imperfetto"
-      ai_meta3: "↳ setting today’s focus"
-      ai_reply: "Bentornato. Last session we stopped on passato prossimo. You still have systematic errors on the distinction with imperfetto — using passato prossimo for ongoing past states. Today we work exactly there. Iniziamo."
+      label: "In practice"
+      title: "A session with dojo"
+      intro: "You open a conversation. dojo already knows where you stopped last time."
+      bar_label: "scenario · study_open"
 
-    flow:
-      label: "How it works"
-      title: "Three moves, repeated until fluent."
-      step1:
-        title: "Map the gap"
-        body: "At the start of every session the AI reads your log and identifies exactly what you don’t know yet. No re-briefing. No warm-up theatre."
-      step2:
-        title: "Work the gap"
-        body: "The sensei drills the gap — vocabulary, grammar, listening, production. It adjusts in real time based on your responses."
-      step3:
-        title: "Log the delta"
-        body: "At the end of the session the AI writes an immutable log entry. Next session starts exactly where this one ended."
+      user_msg1: "ciao, riprendiamo a studiare italiano"
 
-    principles:
-      label: "Principles"
-      title: "What dojo believes about language learning."
-      p1: "Fluency is not the accumulation of correct answers. It is the reduction of the gap between passive understanding and active production."
-      p2: "The AI never moves forward until the current gap is closed. Speed is a consequence of precision, not of skipping."
-      p3: "Every session is logged immutably. The record is the source of truth — not your memory of what you covered."
-      p4: "Grammar is introduced only when it explains something you have already encountered in real language. Rules follow use, not the other way around."
-      p5: "The sensei does not praise effort. It tracks results. The log shows what changed — that is the only meaningful feedback."
+      ai_reply1_pre: "Welcome back. Reading last session log..."
+      ai_reply1_gaps_intro: "You have 3 open gaps:"
+      ai_gap1_tag: "grammar"
+      ai_gap1_body: "Passato prossimo vs imperfetto — systematic errors on ongoing past states."
+      ai_gap2_tag: "vocab / register"
+      ai_gap2_body: "Formal register for written Italian — 6 target expressions introduced, 2 not yet active."
+      ai_gap3_tag: "listening"
+      ai_gap3_body: "Native speed comprehension — no session in 9 days, decay risk on recent progress."
+
+      user_msg2: "Facciamo grammatica. Ho 20 minuti."
+
+      ai_reply2: "Good. 20 minutes is enough for a focused drill. 4 scenarios that triggered the breakdown last time — real contexts, no fill-in-the-blank. I'll flag every error in real time so you can feel the pattern. Iniziamo."
 
     cta:
       scenarios: "See scenarios"

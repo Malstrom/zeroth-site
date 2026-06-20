@@ -1,0 +1,67 @@
+/* chat.css — styles for the chat component (_components/chat.html) */
+/* Load after base.css, before any page-specific CSS. */
+
+.chat {
+  margin-top: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  max-width: var(--content-narrow);
+}
+
+.chat__message {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.chat__message--user {
+  align-items: flex-end;
+}
+
+.chat__message--user .chat__bubble {
+  background: var(--color-surface-offset);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-lg) var(--radius-lg) var(--radius-sm) var(--radius-lg);
+  font-size: var(--text-sm);
+  max-width: 72%;
+  display: inline-block;
+}
+
+.chat__message--ai {
+  align-items: flex-start;
+}
+
+.chat__meta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  margin-bottom: var(--space-2);
+  padding-left: var(--space-1);
+}
+
+.chat__meta span {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+  letter-spacing: 0.03em;
+}
+
+.chat__message--ai .chat__bubble {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  padding: var(--space-4) var(--space-5);
+  border-radius: var(--radius-sm) var(--radius-lg) var(--radius-lg) var(--radius-lg);
+  font-size: var(--text-sm);
+  line-height: 1.7;
+  max-width: 88%;
+  display: inline-block;
+}
+
+@media (max-width: 700px) {
+  .chat__message--user .chat__bubble { max-width: 90%; }
+  .chat__message--ai .chat__bubble { max-width: 100%; }
+}

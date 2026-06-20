@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="light" data-page="zeroth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -299,11 +299,15 @@
     </div>
   </footer>
 
+  <!-- js-yaml CDN (richiesto da i18n.js) -->
+  <script src="https://cdn.jsdelivr.net/npm/js-yaml@4/dist/js-yaml.min.js"></script>
+  <!-- i18n loader -->
+  <script src="./assets/js/i18n.js"></script>
+
   <script>
     (function(){
       const r = document.documentElement;
       const themeToggle = document.querySelector('[data-theme-toggle]');
-      const langToggle = document.querySelector('[data-lang-toggle]');
       const sun = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>';
       const moon = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
       let theme = matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light';
@@ -315,86 +319,6 @@
           r.setAttribute('data-theme', theme);
           themeToggle.setAttribute('aria-label', 'Switch to ' + (theme === 'dark' ? 'light' : 'dark') + ' mode');
           themeToggle.innerHTML = theme === 'dark' ? sun : moon;
-        });
-      }
-
-      const translations = {
-        en: {
-          'hero.eyebrow': 'The zeroth law',
-          'hero.quote': '"A robot may not harm humanity, or, by inaction, allow humanity to come to harm."',
-          'hero.attribution': '— Isaac Asimov, <em>Robots and Empire</em>, 1985',
-          'hero.tagline': 'A zeroth law doesn\'t replace the others. It governs them.<br>The foundational rule set for every AI-native framework in the Malstrom ecosystem.',
-          'hero.cta.explore': 'Explore the frameworks',
-          'hero.cta.github': 'View on GitHub',
-          'frameworks.label': 'Frameworks',
-          'frameworks.heading': 'Built on the zeroth law',
-          'frameworks.body': 'Every framework in the ecosystem inherits zeroth\'s rules — immutable logs, scenario-driven AI, single source of truth. Each one solves a different problem in knowledge work.',
-          'dojo.question': 'What is the gap between what I know<br>and what I need to know?',
-          'dojo.desc': 'AI-assisted learning. The AI acts as a sensei — tracks your knowledge state, works only on the gap, and never lets you skip the fundamentals.',
-          'aurora.question': 'What have I done, for whom,<br>and what do I need to do next?',
-          'aurora.desc': 'Professional memory. The AI remembers everything you have done across all clients — so every session starts exactly where the last one ended.',
-          'sudo.question': 'How do I find and land<br>the job I actually want?',
-          'sudo.desc': 'Job search management. Immutable pipeline log, full context across sessions, no re-briefing. The AI knows your full pipeline from the first session to the last.',
-          'common.readme': 'Read the README',
-          'giskard.label': 'Validation',
-          'giskard.heading': 'giskard enforces the law',
-          'giskard.body': 'Every framework built on zeroth can be validated by giskard. If a repo violates the rules defined here, giskard catches it. No zeroth, no giskard. The law comes first.',
-          'giskard.cta': 'View giskard on GitHub',
-          'prereqs.label': 'Before you start',
-          'prereqs.heading': 'What you need',
-          'prereqs.body': 'All frameworks in this ecosystem run through Perplexity AI with the GitHub connector. You need two things before you begin.',
-          'prereqs.pro.name': 'Perplexity Pro',
-          'prereqs.pro.desc': 'Required for the GitHub connector. The AI reads and writes your framework instance repo directly from the chat.',
-          'prereqs.github.name': 'GitHub account',
-          'prereqs.github.desc': 'Free. Each framework instance lives in its own GitHub repo — your data, your history, fully under your control.'
-        },
-        ru: {
-          'hero.eyebrow': 'Нулевой закон',
-          'hero.quote': '«Робот не может причинить вред человечеству или своим бездействием допустить, чтобы человечеству был причинён вред.»',
-          'hero.attribution': '— Айзек Азимов, <em>Роботы и Империя</em>, 1985',
-          'hero.tagline': 'Нулевой закон не заменяет остальные. Он управляет ими.<br>Базовый свод правил для каждого AI-native фреймворка в экосистеме Malstrom.',
-          'hero.cta.explore': 'Изучить фреймворки',
-          'hero.cta.github': 'Открыть на GitHub',
-          'frameworks.label': 'Фреймворки',
-          'frameworks.heading': 'Построены на нулевом законе',
-          'frameworks.body': 'Каждый фреймворк в экосистеме наследует правила zeroth: неизменяемые логи, сценарно-управляемый ИИ и единый источник истины. Каждый решает свою задачу в интеллектуальной работе.',
-          'dojo.question': 'Каков разрыв между тем, что я знаю,<br>и тем, что мне нужно знать?',
-          'dojo.desc': 'Обучение с поддержкой ИИ. ИИ действует как сэнсэй: отслеживает состояние ваших знаний, работает только с пробелом и не позволяет перескакивать через основы.',
-          'aurora.question': 'Что я уже сделал, для кого,<br>и что мне нужно делать дальше?',
-          'aurora.desc': 'Профессиональная память. ИИ помнит всё, что вы сделали для всех клиентов, поэтому каждая новая сессия начинается ровно там, где закончилась предыдущая.',
-          'sudo.question': 'Как найти и получить<br>работу, которую я действительно хочу?',
-          'sudo.desc': 'Управление поиском работы. Неизменяемый лог воронки, полный контекст между сессиями, без повторных объяснений. ИИ знает весь ваш путь — от первой сессии до последней.',
-          'common.readme': 'Читать README',
-          'giskard.label': 'Валидация',
-          'giskard.heading': 'giskard обеспечивает соблюдение закона',
-          'giskard.body': 'Каждый фреймворк, построенный на zeroth, можно валидировать через giskard. Если репозиторий нарушает определённые здесь правила, giskard это обнаружит. Нет zeroth — нет giskard. Сначала закон.',
-          'giskard.cta': 'Открыть giskard на GitHub',
-          'prereqs.label': 'Перед началом',
-          'prereqs.heading': 'Что понадобится',
-          'prereqs.body': 'Все фреймворки этой экосистемы работают через Perplexity AI с подключением GitHub. Перед началом вам нужны две вещи.',
-          'prereqs.pro.name': 'Perplexity Pro',
-          'prereqs.pro.desc': 'Нужен для GitHub-коннектора. ИИ читает и изменяет репозиторий вашего экземпляра фреймворка прямо из чата.',
-          'prereqs.github.name': 'Аккаунт GitHub',
-          'prereqs.github.desc': 'Бесплатно. Каждый экземпляр фреймворка живёт в собственном репозитории GitHub — ваши данные, ваша история и полный контроль.'
-        }
-      };
-
-      function applyLang(lang) {
-        const dict = translations[lang] || translations.en;
-        document.querySelectorAll('[data-i18n]').forEach(el => {
-          const key = el.getAttribute('data-i18n');
-          if (dict[key]) el.innerHTML = dict[key];
-        });
-        r.setAttribute('lang', lang);
-        if (langToggle) langToggle.textContent = lang === 'ru' ? 'RU / EN' : 'EN / RU';
-      }
-
-      let lang = (navigator.language || '').toLowerCase().startsWith('ru') ? 'ru' : 'en';
-      applyLang(lang);
-      if (langToggle) {
-        langToggle.addEventListener('click', () => {
-          lang = lang === 'en' ? 'ru' : 'en';
-          applyLang(lang);
         });
       }
 

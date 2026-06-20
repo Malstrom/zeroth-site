@@ -37,8 +37,10 @@ en:
       ai_gap3_tag: "listening"
       ai_gap3_body: "Native speed comprehension — no session in 9 days, decay risk on recent progress."
       ai_rec: "I'd suggest starting with grammar — it's blocking the most."
-      user_msg2: "Facciamo grammatica. Ho 20 minuti."
-      ai_reply2: "Good. 20 minutes is enough for a focused drill. 4 scenarios that triggered the breakdown last time — real contexts, no fill-in-the-blank. I'll flag every error in real time so you can feel the pattern. Iniziamo."
+      user_msg2: "ok"
+      ai_reply2_intro: "Good. Let's go."
+      ai_reply2_example: "“Mentre studiavo, ho capito tutto.”"
+      ai_reply2_question: "What changes if you say “ho studiato” instead?"
 
     cta:
       scenarios: "See scenarios"

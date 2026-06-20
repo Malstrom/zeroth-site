@@ -10,6 +10,45 @@ The site is the public face of the zeroth ecosystem: a foundational law that gov
 
 ---
 
+## Content authoring rules
+
+These rules govern how page content is written and adapted. They apply to every page in every framework subfolder.
+
+### Source of truth for content
+
+**The README of each framework repository is the single source of truth for page content.**
+
+When writing or updating the copy for any framework page (landing, scenarios, start, why, how), always:
+
+1. Read the framework's README first (`Malstrom/zeroth` → `frameworks/{framework}/README.md`)
+2. Extract the relevant concepts, language, and principles from that README
+3. Adapt — never copy verbatim — for the target audience of that specific page
+
+The README speaks to builders and power users. The site pages speak to someone who has never heard of the framework. The content must bridge that gap.
+
+### Adapting content for target
+
+Each framework may have multiple target landing pages (e.g. dojo has `developer.html`, `student.html`, `language.html`, `psychology.html`). For each target:
+
+- **The problem section** must be rewritten in the language and context of that specific target. A developer and a student have different pain points even if the framework solves the same underlying problem.
+- **The story section** must use a trigger phrase and scenario that is immediately recognisable to that target. Use their vocabulary, their context, their situation.
+- **The how-it-works section** can share the same 3 principles across targets, but the examples and wording should lean toward that target's world.
+- **Never use internal framework terminology** (nikki, kata, kiroku, gakusei, etc.) in pages aimed at new users. Translate every technical concept into plain language focused on the user's outcome.
+
+### Language rule for user-facing sections
+
+| Section | Internal terms allowed? | Rule |
+|---|---|---|
+| Hero | No | Outcome language only |
+| Il problema | No | User's pain, user's words |
+| Come funziona | No | Describe what happens, not what it's called |
+| Storia | No | 5 beats, zero jargon — see #8 |
+| Scenarios page | Yes, as labels only | Show the id, then explain it in plain language |
+| Start page | Yes, as file names only | User needs to know file names to configure them |
+| why.html / how.html | Yes, carefully | Introduce each term before using it |
+
+---
+
 ## Palette — Nexus warm beige
 
 All colour values come from the **Nexus design system**. Never hardcode hex values; always reference CSS custom properties.

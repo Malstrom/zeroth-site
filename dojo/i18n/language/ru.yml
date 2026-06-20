@@ -5,7 +5,6 @@ ru:
   nav:
     zeroth: "zeroth ←"
     framework_name: "dojo"
-    why: "Зачем"
     scenarios: "Сценарии"
     start: "Начать"
 
@@ -43,6 +42,10 @@ ru:
 
     cta:
       scenarios: "Смотреть все сценарии →"
+
+  wip:
+    title: "Скоро здесь."
+    body: "Страница в разработке. Загляни позже."
 
   footer:
     meta: "экосистема zeroth"

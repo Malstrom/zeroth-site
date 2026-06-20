@@ -23,13 +23,11 @@ en:
       p3: "dojo is built on a different premise: the AI tracks your real knowledge state, session after session, and only ever works on the gap between where you are and where you need to be."
 
     session:
-      label: "In practice"
-      title: "A session with dojo"
+      label: "A real session"
+      title: "This is what dojo looks like."
       intro: "You open a conversation. dojo already knows where you stopped last time."
       bar_label: "scenario · study_open"
-
       user_msg1: "ciao, riprendiamo a studiare italiano"
-
       ai_reply1_pre: "Welcome back. Reading last session log..."
       ai_reply1_gaps_intro: "You have 3 open gaps:"
       ai_gap1_tag: "grammar"
@@ -38,9 +36,7 @@ en:
       ai_gap2_body: "Formal register for written Italian — 6 target expressions introduced, 2 not yet active."
       ai_gap3_tag: "listening"
       ai_gap3_body: "Native speed comprehension — no session in 9 days, decay risk on recent progress."
-
       user_msg2: "Facciamo grammatica. Ho 20 minuti."
-
       ai_reply2: "Good. 20 minutes is enough for a focused drill. 4 scenarios that triggered the breakdown last time — real contexts, no fill-in-the-blank. I'll flag every error in real time so you can feel the pattern. Iniziamo."
 
     cta:

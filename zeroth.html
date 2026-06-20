@@ -14,18 +14,17 @@
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
 
   <style>
-    /* ── TOKENS ─────────────────────────────────────── */
     :root, [data-theme="light"] {
-      --color-bg:              #f7f6f2;
-      --color-surface:         #f9f8f5;
-      --color-surface-offset:  #f0ede8;
-      --color-divider:         #dcd9d5;
-      --color-border:          #d4d1ca;
-      --color-text:            #28251d;
-      --color-text-muted:      #6b6860;
-      --color-text-faint:      #b0aea9;
-      --color-primary:         #01696f;
-      --color-primary-hover:   #0c4e54;
+      --color-bg: #f7f6f2;
+      --color-surface: #f9f8f5;
+      --color-surface-offset: #f0ede8;
+      --color-divider: #dcd9d5;
+      --color-border: #d4d1ca;
+      --color-text: #28251d;
+      --color-text-muted: #6b6860;
+      --color-text-faint: #b0aea9;
+      --color-primary: #01696f;
+      --color-primary-hover: #0c4e54;
       --shadow-sm: 0 1px 3px oklch(0.2 0.01 80 / 0.06);
       --shadow-md: 0 4px 16px oklch(0.2 0.01 80 / 0.09);
       --radius-sm: 0.375rem;
@@ -33,34 +32,34 @@
       --radius-lg: 0.75rem;
       --radius-xl: 1rem;
       --font-display: 'Instrument Serif', Georgia, serif;
-      --font-body:    'Geist', 'Helvetica Neue', sans-serif;
-      --font-mono:    'Geist Mono', 'Courier New', monospace;
-      --text-xs:   clamp(0.75rem,  0.7rem  + 0.25vw, 0.875rem);
-      --text-sm:   clamp(0.875rem, 0.8rem  + 0.35vw, 1rem);
-      --text-base: clamp(1rem,     0.95rem + 0.25vw, 1.125rem);
-      --text-lg:   clamp(1.125rem, 1rem    + 0.75vw, 1.5rem);
-      --text-xl:   clamp(1.5rem,   1.2rem  + 1.25vw, 2.25rem);
-      --text-2xl:  clamp(2rem,     1.2rem  + 2.5vw,  3.5rem);
-      --space-1: 0.25rem; --space-2: 0.5rem;  --space-3: 0.75rem;
-      --space-4: 1rem;    --space-5: 1.25rem; --space-6: 1.5rem;
-      --space-8: 2rem;    --space-10: 2.5rem; --space-12: 3rem;
-      --space-16: 4rem;   --space-20: 5rem;   --space-24: 6rem;
-      --content-narrow:  640px;
+      --font-body: 'Geist', 'Helvetica Neue', sans-serif;
+      --font-mono: 'Geist Mono', 'Courier New', monospace;
+      --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+      --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+      --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+      --text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+      --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+      --text-2xl: clamp(2rem, 1.2rem + 2.5vw, 3.5rem);
+      --space-1: 0.25rem; --space-2: 0.5rem; --space-3: 0.75rem;
+      --space-4: 1rem; --space-5: 1.25rem; --space-6: 1.5rem;
+      --space-8: 2rem; --space-10: 2.5rem; --space-12: 3rem;
+      --space-16: 4rem; --space-20: 5rem; --space-24: 6rem;
+      --content-narrow: 640px;
       --content-default: 920px;
-      --content-wide:    1160px;
+      --content-wide: 1160px;
       --t: 180ms cubic-bezier(0.16, 1, 0.3, 1);
     }
     [data-theme="dark"] {
-      --color-bg:             #171614;
-      --color-surface:        #1c1b19;
+      --color-bg: #171614;
+      --color-surface: #1c1b19;
       --color-surface-offset: #252422;
-      --color-divider:        #2e2d2b;
-      --color-border:         #393836;
-      --color-text:           #cdccca;
-      --color-text-muted:     #8a8885;
-      --color-text-faint:     #5a5957;
-      --color-primary:        #4f98a3;
-      --color-primary-hover:  #6db8c4;
+      --color-divider: #2e2d2b;
+      --color-border: #393836;
+      --color-text: #cdccca;
+      --color-text-muted: #8a8885;
+      --color-text-faint: #5a5957;
+      --color-primary: #4f98a3;
+      --color-primary-hover: #6db8c4;
       --shadow-sm: 0 1px 3px oklch(0 0 0 / 0.25);
       --shadow-md: 0 4px 16px oklch(0 0 0 / 0.35);
     }
@@ -74,14 +73,10 @@
       }
     }
 
-    /* ── BASE ───────────────────────────────────────── */
     *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
-    html { scroll-behavior:smooth; scroll-padding-top:var(--space-16);
-           -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
-           hanging-punctuation:first last; }
-    body { font-family:var(--font-body); font-size:var(--text-base);
-           color:var(--color-text); background:var(--color-bg); min-height:100dvh; line-height:1.65; }
-    img  { display:block; max-width:100%; height:auto; }
+    html { scroll-behavior:smooth; scroll-padding-top:var(--space-16); -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; hanging-punctuation:first last; }
+    body { font-family:var(--font-body); font-size:var(--text-base); color:var(--color-text); background:var(--color-bg); min-height:100dvh; line-height:1.65; }
+    img { display:block; max-width:100%; height:auto; }
     ul[role="list"] { list-style:none; }
     h1,h2,h3,h4 { text-wrap:balance; line-height:1.15; }
     p, li { text-wrap:pretty; max-width:68ch; }
@@ -92,149 +87,72 @@
       *,*::before,*::after { animation-duration:.01ms!important; transition-duration:.01ms!important; }
     }
 
-    /* ── LAYOUT ─────────────────────────────────────── */
-    .container { max-width:var(--content-default); margin-inline:auto;
-                 padding-inline:clamp(var(--space-4),5vw,var(--space-12)); }
-
-    /* ── NAV ────────────────────────────────────────── */
-    .nav { position:sticky; top:0; z-index:100;
-           background:color-mix(in oklch,var(--color-bg) 92%,transparent);
-           backdrop-filter:blur(12px); border-bottom:1px solid var(--color-divider);
-           padding-block:var(--space-4); }
-    .nav__inner { max-width:var(--content-wide); margin-inline:auto;
-                  padding-inline:clamp(var(--space-4),5vw,var(--space-12));
-                  display:flex; align-items:center; justify-content:space-between; gap:var(--space-4); }
-    .nav__logo { display:flex; align-items:center; gap:var(--space-2);
-                 font-family:var(--font-mono); font-size:var(--text-sm); font-weight:500;
-                 letter-spacing:0.02em; transition:color var(--t); }
+    .container { max-width:var(--content-default); margin-inline:auto; padding-inline:clamp(var(--space-4),5vw,var(--space-12)); }
+    .nav { position:sticky; top:0; z-index:100; background:color-mix(in oklch,var(--color-bg) 92%,transparent); backdrop-filter:blur(12px); border-bottom:1px solid var(--color-divider); padding-block:var(--space-4); }
+    .nav__inner { max-width:var(--content-wide); margin-inline:auto; padding-inline:clamp(var(--space-4),5vw,var(--space-12)); display:flex; align-items:center; justify-content:space-between; gap:var(--space-4); }
+    .nav__logo { display:flex; align-items:center; gap:var(--space-2); font-family:var(--font-mono); font-size:var(--text-sm); font-weight:500; letter-spacing:0.02em; transition:color var(--t); }
     .nav__logo:hover { color:var(--color-primary); }
     .nav__actions { display:flex; align-items:center; gap:var(--space-3); }
-    .nav__link { font-size:var(--text-sm); color:var(--color-text-muted);
-                 display:flex; align-items:center; gap:var(--space-1); transition:color var(--t); }
-    .nav__link:hover { color:var(--color-text); }
-    .nav__toggle { width:36px; height:36px; display:flex; align-items:center; justify-content:center;
-                   border-radius:var(--radius-md); color:var(--color-text-muted); transition:color var(--t),background var(--t); }
+    .nav__link, .nav__lang { font-size:var(--text-sm); color:var(--color-text-muted); display:flex; align-items:center; gap:var(--space-1); transition:color var(--t), background var(--t); }
+    .nav__link:hover, .nav__lang:hover { color:var(--color-text); }
+    .nav__lang { padding: 0.45rem 0.7rem; border:1px solid var(--color-border); border-radius:var(--radius-md); }
+    .nav__toggle { width:36px; height:36px; display:flex; align-items:center; justify-content:center; border-radius:var(--radius-md); color:var(--color-text-muted); transition:color var(--t),background var(--t); }
     .nav__toggle:hover { color:var(--color-text); background:var(--color-surface-offset); }
 
-    /* ── HERO ───────────────────────────────────────── */
-    .hero { padding-block:clamp(var(--space-16),10vw,var(--space-24)) clamp(var(--space-12),8vw,var(--space-20));
-            border-bottom:1px solid var(--color-divider); }
-    .hero__eyebrow { font-family:var(--font-mono); font-size:var(--text-xs);
-                     letter-spacing:0.12em; text-transform:uppercase;
-                     color:var(--color-primary); margin-bottom:var(--space-8); }
-    .hero__quote { font-family:var(--font-display); font-style:italic;
-                   font-size:var(--text-2xl); color:var(--color-text);
-                   line-height:1.25; max-width:820px; margin-bottom:var(--space-6); }
+    .hero { padding-block:clamp(var(--space-16),10vw,var(--space-24)) clamp(var(--space-12),8vw,var(--space-20)); border-bottom:1px solid var(--color-divider); }
+    .hero__eyebrow { font-family:var(--font-mono); font-size:var(--text-xs); letter-spacing:0.12em; text-transform:uppercase; color:var(--color-primary); margin-bottom:var(--space-8); }
+    .hero__quote { font-family:var(--font-display); font-style:italic; font-size:var(--text-2xl); color:var(--color-text); line-height:1.25; max-width:820px; margin-bottom:var(--space-6); }
     .hero__attribution { font-size:var(--text-sm); color:var(--color-text-muted); margin-bottom:var(--space-10); }
     .hero__attribution em { font-style:normal; }
-    .hero__tagline { font-size:var(--text-lg); color:var(--color-text-muted);
-                     max-width:52ch; margin-bottom:var(--space-10); line-height:1.6;
-                     font-weight:300; }
+    .hero__tagline { font-size:var(--text-lg); color:var(--color-text-muted); max-width:52ch; margin-bottom:var(--space-10); line-height:1.6; font-weight:300; }
     .hero__cta-group { display:flex; align-items:center; gap:var(--space-4); flex-wrap:wrap; }
 
-    /* ── BUTTONS ────────────────────────────────────── */
-    .btn { display:inline-flex; align-items:center; gap:var(--space-2);
-           padding:var(--space-3) var(--space-6); font-size:var(--text-sm); font-weight:500;
-           border-radius:var(--radius-md); transition:background var(--t),color var(--t),box-shadow var(--t); }
+    .btn { display:inline-flex; align-items:center; gap:var(--space-2); padding:var(--space-3) var(--space-6); font-size:var(--text-sm); font-weight:500; border-radius:var(--radius-md); transition:background var(--t),color var(--t),box-shadow var(--t); }
     .btn--primary { background:var(--color-text); color:var(--color-bg); }
     .btn--primary:hover { background:color-mix(in oklch,var(--color-text) 85%,var(--color-primary)); }
     .btn--ghost { color:var(--color-text-muted); border:1px solid var(--color-border); }
     .btn--ghost:hover { color:var(--color-text); background:var(--color-surface-offset); }
 
-    /* ── SECTION SHARED ─────────────────────────────── */
     .section { padding-block:clamp(var(--space-12),8vw,var(--space-20)); }
-    .section__label { font-family:var(--font-mono); font-size:var(--text-xs);
-                      letter-spacing:0.12em; text-transform:uppercase;
-                      color:var(--color-text-faint); margin-bottom:var(--space-6); }
-    /* section headings: light weight, editorial — NOT display font */
-    .section__heading { font-family:var(--font-body); font-size:var(--text-xl);
-                        font-weight:300; letter-spacing:-0.01em;
-                        color:var(--color-text); margin-bottom:var(--space-4); }
-    .section__body { font-size:var(--text-base); color:var(--color-text-muted);
-                     max-width:60ch; line-height:1.7; }
+    .section__label { font-family:var(--font-mono); font-size:var(--text-xs); letter-spacing:0.12em; text-transform:uppercase; color:var(--color-text-faint); margin-bottom:var(--space-6); }
+    .section__heading { font-family:var(--font-body); font-size:var(--text-xl); font-weight:300; letter-spacing:-0.01em; color:var(--color-text); margin-bottom:var(--space-4); }
+    .section__body { font-size:var(--text-base); color:var(--color-text-muted); max-width:60ch; line-height:1.7; }
 
-    /* ── FRAMEWORKS ─────────────────────────────────── */
     .frameworks { border-bottom:1px solid var(--color-divider); }
     .frameworks__header { margin-bottom:var(--space-12); }
-    .frameworks__grid { display:grid;
-                        grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr));
-                        gap:var(--space-5); margin-bottom:var(--space-8); }
-
-    /* ── CARD BASE ──────────────────────────────────── */
-    .framework-card { background:var(--color-surface);
-                      border:1px solid oklch(from var(--color-text) l c h / 0.08);
-                      border-radius:var(--radius-xl);
-                      padding:var(--space-10) var(--space-8);
-                      display:flex; flex-direction:column; gap:var(--space-5);
-                      position:relative; overflow:hidden;
-                      transition:box-shadow var(--t),border-color var(--t); }
-    .framework-card:hover { box-shadow:var(--shadow-md);
-                             border-color:oklch(from var(--color-text) l c h / 0.14); }
-
-    /* decorative motif — top-right corner, purely illustrative */
-    .card-motif { position:absolute; top:var(--space-6); right:var(--space-6);
-                  opacity:0.10; color:var(--color-text);
-                  transition:opacity var(--t); pointer-events:none; }
+    .frameworks__grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr)); gap:var(--space-5); margin-bottom:var(--space-8); }
+    .framework-card { background:var(--color-surface); border:1px solid oklch(from var(--color-text) l c h / 0.08); border-radius:var(--radius-xl); padding:var(--space-10) var(--space-8); display:flex; flex-direction:column; gap:var(--space-5); position:relative; overflow:hidden; transition:box-shadow var(--t),border-color var(--t); }
+    .framework-card:hover { box-shadow:var(--shadow-md); border-color:oklch(from var(--color-text) l c h / 0.14); }
+    .card-motif { position:absolute; top:var(--space-6); right:var(--space-6); opacity:0.10; color:var(--color-text); transition:opacity var(--t); pointer-events:none; }
     .framework-card:hover .card-motif { opacity:0.18; }
-
-    .card__name { font-family:var(--font-mono); font-size:var(--text-xs);
-                  font-weight:500; letter-spacing:0.08em; text-transform:uppercase;
-                  color:var(--color-text-faint); }
-
-    /* guiding question — calm, reflective, NOT a title */
-    .card__question { font-family:var(--font-body); font-size:var(--text-base);
-                      font-weight:400; color:var(--color-text-muted);
-                      line-height:1.6; max-width:32ch; }
-
-    .card__desc { font-size:var(--text-sm); color:var(--color-text-muted);
-                  line-height:1.7; flex:1; }
-
+    .card__name { font-family:var(--font-mono); font-size:var(--text-xs); font-weight:500; letter-spacing:0.08em; text-transform:uppercase; color:var(--color-text-faint); }
+    .card__question { font-family:var(--font-body); font-size:var(--text-base); font-weight:400; color:var(--color-text-muted); line-height:1.6; max-width:32ch; }
+    .card__desc { font-size:var(--text-sm); color:var(--color-text-muted); line-height:1.7; flex:1; }
     .card__rule { border:none; border-top:1px solid var(--color-divider); margin:0; }
-
-    .card__link { display:inline-flex; align-items:center; gap:var(--space-1);
-                  font-size:var(--text-sm); color:var(--color-primary);
-                  transition:color var(--t); margin-top:auto; }
+    .card__link { display:inline-flex; align-items:center; gap:var(--space-1); font-size:var(--text-sm); color:var(--color-primary); transition:color var(--t); margin-top:auto; }
     .card__link:hover { color:var(--color-primary-hover); }
 
-    /* ── GISKARD ────────────────────────────────────── */
     .giskard { border-bottom:1px solid var(--color-divider); }
-    .giskard__inner { display:grid; grid-template-columns:1fr 1fr;
-                      gap:var(--space-16); align-items:center; }
-    .giskard__mono { font-family:var(--font-mono); font-size:var(--text-xs);
-                     color:var(--color-text-faint); background:var(--color-surface-offset);
-                     border:1px solid var(--color-border); border-radius:var(--radius-lg);
-                     padding:var(--space-6) var(--space-8); line-height:1.8; }
-    .giskard__mono .ok  { color:var(--color-primary); }
+    .giskard__inner { display:grid; grid-template-columns:1fr 1fr; gap:var(--space-16); align-items:center; }
+    .giskard__mono { font-family:var(--font-mono); font-size:var(--text-xs); color:var(--color-text-faint); background:var(--color-surface-offset); border:1px solid var(--color-border); border-radius:var(--radius-lg); padding:var(--space-6) var(--space-8); line-height:1.8; }
+    .giskard__mono .ok { color:var(--color-primary); }
     .giskard__mono .dim { color:var(--color-text-faint); }
     @media (max-width:700px) {
       .giskard__inner { grid-template-columns:1fr; }
-      .giskard__mono  { display:none; }
+      .giskard__mono { display:none; }
     }
 
-    /* ── PREREQUISITES ──────────────────────────────── */
     .prereqs { border-bottom:1px solid var(--color-divider); }
-    .prereqs__list { display:flex; flex-direction:column; gap:var(--space-4);
-                     margin-top:var(--space-8); max-width:var(--content-narrow); }
-    .prereq-item { display:flex; gap:var(--space-4); align-items:flex-start;
-                   padding:var(--space-5) var(--space-6);
-                   background:var(--color-surface);
-                   border:1px solid oklch(from var(--color-text) l c h / 0.08);
-                   border-radius:var(--radius-lg); }
-    .prereq-item__icon { width:36px; height:36px; flex-shrink:0;
-                         display:flex; align-items:center; justify-content:center;
-                         background:var(--color-surface-offset); border-radius:var(--radius-md);
-                         color:var(--color-text-muted); }
-    .prereq-item__name { font-size:var(--text-sm); font-weight:600;
-                         color:var(--color-text); margin-bottom:var(--space-1); }
+    .prereqs__list { display:flex; flex-direction:column; gap:var(--space-4); margin-top:var(--space-8); max-width:var(--content-narrow); }
+    .prereq-item { display:flex; gap:var(--space-4); align-items:flex-start; padding:var(--space-5) var(--space-6); background:var(--color-surface); border:1px solid oklch(from var(--color-text) l c h / 0.08); border-radius:var(--radius-lg); }
+    .prereq-item__icon { width:36px; height:36px; flex-shrink:0; display:flex; align-items:center; justify-content:center; background:var(--color-surface-offset); border-radius:var(--radius-md); color:var(--color-text-muted); }
+    .prereq-item__name { font-size:var(--text-sm); font-weight:600; color:var(--color-text); margin-bottom:var(--space-1); }
     .prereq-item__desc { font-size:var(--text-sm); color:var(--color-text-muted); max-width:48ch; }
-    .prereq-item__link { font-size:var(--text-xs); color:var(--color-primary);
-                         margin-top:var(--space-2); display:inline-block; transition:color var(--t); }
+    .prereq-item__link { font-size:var(--text-xs); color:var(--color-primary); margin-top:var(--space-2); display:inline-block; transition:color var(--t); }
     .prereq-item__link:hover { color:var(--color-primary-hover); }
 
-    /* ── FOOTER ─────────────────────────────────────── */
     .footer { padding-block:var(--space-12); color:var(--color-text-faint); }
-    .footer__inner { display:flex; align-items:center; justify-content:space-between;
-                     flex-wrap:wrap; gap:var(--space-4); }
+    .footer__inner { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:var(--space-4); }
     .footer__left { font-family:var(--font-mono); font-size:var(--text-xs); letter-spacing:0.05em; }
     .footer__links { display:flex; gap:var(--space-6); }
     .footer__links a { font-size:var(--text-xs); color:var(--color-text-faint); transition:color var(--t); }
@@ -242,29 +160,22 @@
   </style>
 </head>
 <body>
-
-  <!-- NAV -->
   <nav class="nav" aria-label="Main navigation">
     <div class="nav__inner">
       <a href="#" class="nav__logo" aria-label="zeroth home">
-        <!-- zeroth logo: compass-like circle with cardinal spokes and inner dot -->
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
           <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/>
           <circle cx="10" cy="10" r="2.5" fill="currentColor"/>
-          <line x1="10" y1="2" x2="10" y2="5.5"  stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="10" y1="2" x2="10" y2="5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
           <line x1="10" y1="14.5" x2="10" y2="18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-          <line x1="2" y1="10"  x2="5.5" y2="10"  stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="2" y1="10" x2="5.5" y2="10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
           <line x1="14.5" y1="10" x2="18" y2="10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
         </svg>
         zeroth
       </a>
       <div class="nav__actions">
-        <a href="https://github.com/Malstrom/zeroth" target="_blank" rel="noopener noreferrer" class="nav__link">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
-          </svg>
-          GitHub
-        </a>
+        <a href="https://github.com/Malstrom/zeroth" target="_blank" rel="noopener noreferrer" class="nav__link">GitHub</a>
+        <button class="nav__lang" data-lang-toggle aria-label="Switch language">EN / RU</button>
         <button class="nav__toggle" data-theme-toggle aria-label="Switch to dark mode">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
@@ -275,191 +186,65 @@
   </nav>
 
   <main>
-
-    <!-- HERO -->
     <section class="hero" aria-labelledby="hero-heading">
       <div class="container">
         <p class="hero__eyebrow" data-i18n="hero.eyebrow">The zeroth law</p>
-        <blockquote class="hero__quote" id="hero-heading">
-          "A robot may not harm humanity, or, by inaction, allow humanity to come to harm."
-        </blockquote>
-        <p class="hero__attribution">
-          — Isaac Asimov, <em>Robots and Empire</em>, 1985
-        </p>
-        <p class="hero__tagline" data-i18n="hero.tagline">
-          A zeroth law doesn't replace the others. It governs them.<br>
-          The foundational rule set for every AI-native framework in the Malstrom ecosystem.
-        </p>
+        <blockquote class="hero__quote" id="hero-heading" data-i18n="hero.quote">"A robot may not harm humanity, or, by inaction, allow humanity to come to harm."</blockquote>
+        <p class="hero__attribution" data-i18n="hero.attribution">— Isaac Asimov, <em>Robots and Empire</em>, 1985</p>
+        <p class="hero__tagline" data-i18n="hero.tagline">A zeroth law doesn't replace the others. It governs them.<br>The foundational rule set for every AI-native framework in the Malstrom ecosystem.</p>
         <div class="hero__cta-group">
-          <a href="#frameworks" class="btn btn--primary">
-            Explore the frameworks
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
-            </svg>
-          </a>
-          <a href="https://github.com/Malstrom/zeroth" target="_blank" rel="noopener noreferrer" class="btn btn--ghost">
-            View on GitHub
-          </a>
+          <a href="#frameworks" class="btn btn--primary" data-i18n="hero.cta.explore">Explore the frameworks</a>
+          <a href="https://github.com/Malstrom/zeroth" target="_blank" rel="noopener noreferrer" class="btn btn--ghost" data-i18n="hero.cta.github">View on GitHub</a>
         </div>
       </div>
     </section>
 
-    <!-- FRAMEWORKS -->
     <section class="section frameworks" id="frameworks" aria-labelledby="frameworks-heading">
       <div class="container">
         <div class="frameworks__header">
           <p class="section__label" data-i18n="frameworks.label">Frameworks</p>
-          <h2 class="section__heading" id="frameworks-heading" data-i18n="frameworks.heading">
-            Built on the zeroth law
-          </h2>
-          <p class="section__body" data-i18n="frameworks.body">
-            Every framework in the ecosystem inherits zeroth's rules — immutable logs, scenario-driven AI, single source of truth. Each one solves a different problem in knowledge work.
-          </p>
+          <h2 class="section__heading" id="frameworks-heading" data-i18n="frameworks.heading">Built on the zeroth law</h2>
+          <p class="section__body" data-i18n="frameworks.body">Every framework in the ecosystem inherits zeroth's rules — immutable logs, scenario-driven AI, single source of truth. Each one solves a different problem in knowledge work.</p>
         </div>
-
         <div class="frameworks__grid" role="list">
-
-          <!-- ── DOJO ────────────────────────────── -->
           <article class="framework-card" role="listitem" data-framework="dojo">
-
-            <!-- Motif: ensō — open brushstroke circle, zen / the gap -->
-            <svg class="card-motif" width="80" height="80" viewBox="0 0 80 80" fill="none"
-                 aria-hidden="true" focusable="false">
-              <path d="M40 8
-                       A32 32 0 1 1 12 40
-                       A32 32 0 0 1 24 14"
-                    stroke="currentColor" stroke-width="4"
-                    stroke-linecap="round" fill="none"/>
-            </svg>
-
+            <svg class="card-motif" width="80" height="80" viewBox="0 0 80 80" fill="none" aria-hidden="true" focusable="false"><path d="M40 8 A32 32 0 1 1 12 40 A32 32 0 0 1 24 14" stroke="currentColor" stroke-width="4" stroke-linecap="round" fill="none"/></svg>
             <span class="card__name">dojo</span>
-
-            <p class="card__question" data-i18n="dojo.question">
-              What is the gap between what I know<br>and what I need to know?
-            </p>
-
+            <p class="card__question" data-i18n="dojo.question">What is the gap between what I know<br>and what I need to know?</p>
             <hr class="card__rule">
-
-            <p class="card__desc" data-i18n="dojo.desc">
-              AI-assisted learning. The AI acts as a sensei — tracks your knowledge state, works only on the gap, and never lets you skip the fundamentals.
-            </p>
-
-            <a href="https://github.com/Malstrom/zeroth/blob/main/frameworks/dojo/README.md"
-               target="_blank" rel="noopener noreferrer" class="card__link">
-              Read the README
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-                <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/>
-              </svg>
-            </a>
+            <p class="card__desc" data-i18n="dojo.desc">AI-assisted learning. The AI acts as a sensei — tracks your knowledge state, works only on the gap, and never lets you skip the fundamentals.</p>
+            <a href="https://github.com/Malstrom/zeroth/blob/main/frameworks/dojo/README.md" target="_blank" rel="noopener noreferrer" class="card__link" data-i18n="common.readme">Read the README</a>
           </article>
-
-          <!-- ── AURORA ──────────────────────────── -->
           <article class="framework-card" role="listitem" data-framework="aurora">
-
-            <!-- Motif: sparse star-map with dashed orbital arc — memory / orientation -->
-            <svg class="card-motif" width="80" height="80" viewBox="0 0 80 80" fill="none"
-                 aria-hidden="true" focusable="false">
-              <ellipse cx="40" cy="40" rx="34" ry="20" stroke="currentColor" stroke-width="1.5"
-                       stroke-dasharray="4 5" fill="none" transform="rotate(-30 40 40)"/>
-              <circle cx="40" cy="6"  r="2"   fill="currentColor"/>
-              <circle cx="68" cy="26" r="1.5" fill="currentColor"/>
-              <circle cx="64" cy="58" r="1"   fill="currentColor"/>
-              <circle cx="16" cy="52" r="1.5" fill="currentColor"/>
-              <circle cx="20" cy="20" r="1"   fill="currentColor"/>
-              <circle cx="40" cy="40" r="3.5" fill="currentColor" opacity="0.6"/>
-            </svg>
-
+            <svg class="card-motif" width="80" height="80" viewBox="0 0 80 80" fill="none" aria-hidden="true" focusable="false"><ellipse cx="40" cy="40" rx="34" ry="20" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4 5" fill="none" transform="rotate(-30 40 40)"/><circle cx="40" cy="6" r="2" fill="currentColor"/><circle cx="68" cy="26" r="1.5" fill="currentColor"/><circle cx="64" cy="58" r="1" fill="currentColor"/><circle cx="16" cy="52" r="1.5" fill="currentColor"/><circle cx="20" cy="20" r="1" fill="currentColor"/><circle cx="40" cy="40" r="3.5" fill="currentColor" opacity="0.6"/></svg>
             <span class="card__name">aurora</span>
-
-            <p class="card__question" data-i18n="aurora.question">
-              What have I done, for whom,<br>and what do I need to do next?
-            </p>
-
+            <p class="card__question" data-i18n="aurora.question">What have I done, for whom,<br>and what do I need to do next?</p>
             <hr class="card__rule">
-
-            <p class="card__desc" data-i18n="aurora.desc">
-              Professional memory. The AI remembers everything you have done across all clients — so every session starts exactly where the last one ended.
-            </p>
-
-            <a href="https://github.com/Malstrom/zeroth/blob/main/frameworks/aurora/README.md"
-               target="_blank" rel="noopener noreferrer" class="card__link">
-              Read the README
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-                <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/>
-              </svg>
-            </a>
+            <p class="card__desc" data-i18n="aurora.desc">Professional memory. The AI remembers everything you have done across all clients — so every session starts exactly where the last one ended.</p>
+            <a href="https://github.com/Malstrom/zeroth/blob/main/frameworks/aurora/README.md" target="_blank" rel="noopener noreferrer" class="card__link" data-i18n="common.readme">Read the README</a>
           </article>
-
-          <!-- ── SUDO-HIRE-ME ────────────────────── -->
           <article class="framework-card" role="listitem" data-framework="sudo-hire-me">
-
-            <!-- Motif: compass rose — minimal needle + ring + ordinal ticks -->
-            <svg class="card-motif" width="80" height="80" viewBox="0 0 80 80" fill="none"
-                 aria-hidden="true" focusable="false">
-              <circle cx="40" cy="40" r="32" stroke="currentColor" stroke-width="1.5" fill="none"/>
-              <line x1="40" y1="8"  x2="40" y2="22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-              <line x1="40" y1="58" x2="40" y2="72" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-              <line x1="8"  y1="40" x2="22" y2="40" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-              <line x1="58" y1="40" x2="72" y2="40" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-              <!-- needle north (filled) -->
-              <polygon points="40,16 36,40 40,38" fill="currentColor"/>
-              <!-- needle south (outline) -->
-              <polygon points="40,64 44,40 40,42" fill="none" stroke="currentColor" stroke-width="1.2"/>
-              <circle cx="40" cy="40" r="3" fill="currentColor"/>
-              <!-- ordinal ticks -->
-              <line x1="62.6" y1="17.4" x2="58.3" y2="21.7" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
-              <line x1="17.4" y1="17.4" x2="21.7" y2="21.7" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
-              <line x1="62.6" y1="62.6" x2="58.3" y2="58.3" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
-              <line x1="17.4" y1="62.6" x2="21.7" y2="58.3" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
-            </svg>
-
+            <svg class="card-motif" width="80" height="80" viewBox="0 0 80 80" fill="none" aria-hidden="true" focusable="false"><circle cx="40" cy="40" r="32" stroke="currentColor" stroke-width="1.5" fill="none"/><line x1="40" y1="8" x2="40" y2="22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="40" y1="58" x2="40" y2="72" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="8" y1="40" x2="22" y2="40" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="58" y1="40" x2="72" y2="40" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><polygon points="40,16 36,40 40,38" fill="currentColor"/><polygon points="40,64 44,40 40,42" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="40" cy="40" r="3" fill="currentColor"/><line x1="62.6" y1="17.4" x2="58.3" y2="21.7" stroke="currentColor" stroke-width="1" stroke-linecap="round"/><line x1="17.4" y1="17.4" x2="21.7" y2="21.7" stroke="currentColor" stroke-width="1" stroke-linecap="round"/><line x1="62.6" y1="62.6" x2="58.3" y2="58.3" stroke="currentColor" stroke-width="1" stroke-linecap="round"/><line x1="17.4" y1="62.6" x2="21.7" y2="58.3" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg>
             <span class="card__name">sudo-hire-me</span>
-
-            <p class="card__question" data-i18n="sudo-hire-me.question">
-              How do I find and land<br>the job I actually want?
-            </p>
-
+            <p class="card__question" data-i18n="sudo.question">How do I find and land<br>the job I actually want?</p>
             <hr class="card__rule">
-
-            <p class="card__desc" data-i18n="sudo-hire-me.desc">
-              Job search management. Immutable pipeline log, full context across sessions, no re-briefing. The AI knows your full pipeline from the first session to the last.
-            </p>
-
-            <a href="https://github.com/Malstrom/zeroth/blob/main/frameworks/sudo-hire-me/README.md"
-               target="_blank" rel="noopener noreferrer" class="card__link">
-              Read the README
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-                <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/>
-              </svg>
-            </a>
+            <p class="card__desc" data-i18n="sudo.desc">Job search management. Immutable pipeline log, full context across sessions, no re-briefing. The AI knows your full pipeline from the first session to the last.</p>
+            <a href="https://github.com/Malstrom/zeroth/blob/main/frameworks/sudo-hire-me/README.md" target="_blank" rel="noopener noreferrer" class="card__link" data-i18n="common.readme">Read the README</a>
           </article>
-
         </div>
       </div>
     </section>
 
-    <!-- GISKARD -->
     <section class="section giskard" id="giskard" aria-labelledby="giskard-heading">
       <div class="container">
         <div class="giskard__inner">
           <div>
             <p class="section__label" data-i18n="giskard.label">Validation</p>
-            <h2 class="section__heading" id="giskard-heading" data-i18n="giskard.heading">
-              giskard enforces the law
-            </h2>
-            <p class="section__body" data-i18n="giskard.body">
-              Every framework built on zeroth can be validated by giskard. If a repo violates the rules defined here, giskard catches it. No zeroth, no giskard. The law comes first.
-            </p>
-            <a href="https://github.com/Malstrom/giskard" target="_blank" rel="noopener noreferrer"
-               class="btn btn--ghost" style="margin-top:var(--space-8);display:inline-flex;">
-              View giskard on GitHub
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-                <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/>
-              </svg>
-            </a>
+            <h2 class="section__heading" id="giskard-heading" data-i18n="giskard.heading">giskard enforces the law</h2>
+            <p class="section__body" data-i18n="giskard.body">Every framework built on zeroth can be validated by giskard. If a repo violates the rules defined here, giskard catches it. No zeroth, no giskard. The law comes first.</p>
+            <a href="https://github.com/Malstrom/giskard" target="_blank" rel="noopener noreferrer" class="btn btn--ghost" style="margin-top:var(--space-8);display:inline-flex;" data-i18n="giskard.cta">View giskard on GitHub</a>
           </div>
-          <pre class="giskard__mono" aria-label="giskard validation output example" role="img">
-<span class="dim">$ giskard validate ./dojo-instance</span>
+          <pre class="giskard__mono" aria-label="giskard validation output example" role="img"><span class="dim">$ giskard validate ./dojo-instance</span>
 
 <span class="ok">✓</span> .agent.yml — found
 <span class="ok">✓</span> .scenarios.yml — found
@@ -474,46 +259,33 @@
       </div>
     </section>
 
-    <!-- PREREQUISITES -->
     <section class="section prereqs" id="prerequisites" aria-labelledby="prereqs-heading">
       <div class="container">
         <p class="section__label" data-i18n="prereqs.label">Before you start</p>
         <h2 class="section__heading" id="prereqs-heading" data-i18n="prereqs.heading">What you need</h2>
-        <p class="section__body" data-i18n="prereqs.body">
-          All frameworks in this ecosystem run through Perplexity AI with the GitHub connector. You need two things before you begin.
-        </p>
+        <p class="section__body" data-i18n="prereqs.body">All frameworks in this ecosystem run through Perplexity AI with the GitHub connector. You need two things before you begin.</p>
         <ul class="prereqs__list" role="list">
           <li class="prereq-item">
-            <div class="prereq-item__icon" aria-hidden="true">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>
-              </svg>
-            </div>
+            <div class="prereq-item__icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
             <div>
-              <p class="prereq-item__name">Perplexity Pro</p>
-              <p class="prereq-item__desc">Required for the GitHub connector. The AI reads and writes your framework instance repo directly from the chat.</p>
+              <p class="prereq-item__name" data-i18n="prereqs.pro.name">Perplexity Pro</p>
+              <p class="prereq-item__desc" data-i18n="prereqs.pro.desc">Required for the GitHub connector. The AI reads and writes your framework instance repo directly from the chat.</p>
               <a href="https://perplexity.ai/pro" target="_blank" rel="noopener noreferrer" class="prereq-item__link">perplexity.ai/pro →</a>
             </div>
           </li>
           <li class="prereq-item">
-            <div class="prereq-item__icon" aria-hidden="true">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
-              </svg>
-            </div>
+            <div class="prereq-item__icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg></div>
             <div>
-              <p class="prereq-item__name">GitHub account</p>
-              <p class="prereq-item__desc">Free. Each framework instance lives in its own GitHub repo — your data, your history, fully under your control.</p>
+              <p class="prereq-item__name" data-i18n="prereqs.github.name">GitHub account</p>
+              <p class="prereq-item__desc" data-i18n="prereqs.github.desc">Free. Each framework instance lives in its own GitHub repo — your data, your history, fully under your control.</p>
               <a href="https://github.com/signup" target="_blank" rel="noopener noreferrer" class="prereq-item__link">github.com/signup →</a>
             </div>
           </li>
         </ul>
       </div>
     </section>
-
   </main>
 
-  <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
       <div class="footer__inner">
@@ -529,29 +301,112 @@
 
   <script>
     (function(){
-      const t = document.querySelector('[data-theme-toggle]');
       const r = document.documentElement;
-      let d = matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light';
-      r.setAttribute('data-theme', d);
+      const themeToggle = document.querySelector('[data-theme-toggle]');
+      const langToggle = document.querySelector('[data-lang-toggle]');
       const sun = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>';
       const moon = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
-      if (t) {
-        t.innerHTML = d === 'dark' ? sun : moon;
-        t.addEventListener('click', () => {
-          d = d === 'dark' ? 'light' : 'dark';
-          r.setAttribute('data-theme', d);
-          t.setAttribute('aria-label', 'Switch to ' + (d === 'dark' ? 'light' : 'dark') + ' mode');
-          t.innerHTML = d === 'dark' ? sun : moon;
+      let theme = matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light';
+      r.setAttribute('data-theme', theme);
+      if (themeToggle) {
+        themeToggle.innerHTML = theme === 'dark' ? sun : moon;
+        themeToggle.addEventListener('click', () => {
+          theme = theme === 'dark' ? 'light' : 'dark';
+          r.setAttribute('data-theme', theme);
+          themeToggle.setAttribute('aria-label', 'Switch to ' + (theme === 'dark' ? 'light' : 'dark') + ' mode');
+          themeToggle.innerHTML = theme === 'dark' ? sun : moon;
         });
       }
+
+      const translations = {
+        en: {
+          'hero.eyebrow': 'The zeroth law',
+          'hero.quote': '"A robot may not harm humanity, or, by inaction, allow humanity to come to harm."',
+          'hero.attribution': '— Isaac Asimov, <em>Robots and Empire</em>, 1985',
+          'hero.tagline': 'A zeroth law doesn\'t replace the others. It governs them.<br>The foundational rule set for every AI-native framework in the Malstrom ecosystem.',
+          'hero.cta.explore': 'Explore the frameworks',
+          'hero.cta.github': 'View on GitHub',
+          'frameworks.label': 'Frameworks',
+          'frameworks.heading': 'Built on the zeroth law',
+          'frameworks.body': 'Every framework in the ecosystem inherits zeroth\'s rules — immutable logs, scenario-driven AI, single source of truth. Each one solves a different problem in knowledge work.',
+          'dojo.question': 'What is the gap between what I know<br>and what I need to know?',
+          'dojo.desc': 'AI-assisted learning. The AI acts as a sensei — tracks your knowledge state, works only on the gap, and never lets you skip the fundamentals.',
+          'aurora.question': 'What have I done, for whom,<br>and what do I need to do next?',
+          'aurora.desc': 'Professional memory. The AI remembers everything you have done across all clients — so every session starts exactly where the last one ended.',
+          'sudo.question': 'How do I find and land<br>the job I actually want?',
+          'sudo.desc': 'Job search management. Immutable pipeline log, full context across sessions, no re-briefing. The AI knows your full pipeline from the first session to the last.',
+          'common.readme': 'Read the README',
+          'giskard.label': 'Validation',
+          'giskard.heading': 'giskard enforces the law',
+          'giskard.body': 'Every framework built on zeroth can be validated by giskard. If a repo violates the rules defined here, giskard catches it. No zeroth, no giskard. The law comes first.',
+          'giskard.cta': 'View giskard on GitHub',
+          'prereqs.label': 'Before you start',
+          'prereqs.heading': 'What you need',
+          'prereqs.body': 'All frameworks in this ecosystem run through Perplexity AI with the GitHub connector. You need two things before you begin.',
+          'prereqs.pro.name': 'Perplexity Pro',
+          'prereqs.pro.desc': 'Required for the GitHub connector. The AI reads and writes your framework instance repo directly from the chat.',
+          'prereqs.github.name': 'GitHub account',
+          'prereqs.github.desc': 'Free. Each framework instance lives in its own GitHub repo — your data, your history, fully under your control.'
+        },
+        ru: {
+          'hero.eyebrow': 'Нулевой закон',
+          'hero.quote': '«Робот не может причинить вред человечеству или своим бездействием допустить, чтобы человечеству был причинён вред.»',
+          'hero.attribution': '— Айзек Азимов, <em>Роботы и Империя</em>, 1985',
+          'hero.tagline': 'Нулевой закон не заменяет остальные. Он управляет ими.<br>Базовый свод правил для каждого AI-native фреймворка в экосистеме Malstrom.',
+          'hero.cta.explore': 'Изучить фреймворки',
+          'hero.cta.github': 'Открыть на GitHub',
+          'frameworks.label': 'Фреймворки',
+          'frameworks.heading': 'Построены на нулевом законе',
+          'frameworks.body': 'Каждый фреймворк в экосистеме наследует правила zeroth: неизменяемые логи, сценарно-управляемый ИИ и единый источник истины. Каждый решает свою задачу в интеллектуальной работе.',
+          'dojo.question': 'Каков разрыв между тем, что я знаю,<br>и тем, что мне нужно знать?',
+          'dojo.desc': 'Обучение с поддержкой ИИ. ИИ действует как сэнсэй: отслеживает состояние ваших знаний, работает только с пробелом и не позволяет перескакивать через основы.',
+          'aurora.question': 'Что я уже сделал, для кого,<br>и что мне нужно делать дальше?',
+          'aurora.desc': 'Профессиональная память. ИИ помнит всё, что вы сделали для всех клиентов, поэтому каждая новая сессия начинается ровно там, где закончилась предыдущая.',
+          'sudo.question': 'Как найти и получить<br>работу, которую я действительно хочу?',
+          'sudo.desc': 'Управление поиском работы. Неизменяемый лог воронки, полный контекст между сессиями, без повторных объяснений. ИИ знает весь ваш путь — от первой сессии до последней.',
+          'common.readme': 'Читать README',
+          'giskard.label': 'Валидация',
+          'giskard.heading': 'giskard обеспечивает соблюдение закона',
+          'giskard.body': 'Каждый фреймворк, построенный на zeroth, можно валидировать через giskard. Если репозиторий нарушает определённые здесь правила, giskard это обнаружит. Нет zeroth — нет giskard. Сначала закон.',
+          'giskard.cta': 'Открыть giskard на GitHub',
+          'prereqs.label': 'Перед началом',
+          'prereqs.heading': 'Что понадобится',
+          'prereqs.body': 'Все фреймворки этой экосистемы работают через Perplexity AI с подключением GitHub. Перед началом вам нужны две вещи.',
+          'prereqs.pro.name': 'Perplexity Pro',
+          'prereqs.pro.desc': 'Нужен для GitHub-коннектора. ИИ читает и изменяет репозиторий вашего экземпляра фреймворка прямо из чата.',
+          'prereqs.github.name': 'Аккаунт GitHub',
+          'prereqs.github.desc': 'Бесплатно. Каждый экземпляр фреймворка живёт в собственном репозитории GitHub — ваши данные, ваша история и полный контроль.'
+        }
+      };
+
+      function applyLang(lang) {
+        const dict = translations[lang] || translations.en;
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+          const key = el.getAttribute('data-i18n');
+          if (dict[key]) el.innerHTML = dict[key];
+        });
+        r.setAttribute('lang', lang);
+        if (langToggle) langToggle.textContent = lang === 'ru' ? 'RU / EN' : 'EN / RU';
+      }
+
+      let lang = (navigator.language || '').toLowerCase().startsWith('ru') ? 'ru' : 'en';
+      applyLang(lang);
+      if (langToggle) {
+        langToggle.addEventListener('click', () => {
+          lang = lang === 'en' ? 'ru' : 'en';
+          applyLang(lang);
+        });
+      }
+
       document.querySelectorAll('a[href^="#"]').forEach(a => {
         a.addEventListener('click', e => {
-          const el = document.querySelector(a.getAttribute('href'));
-          if (el) { e.preventDefault(); el.scrollIntoView({behavior:'smooth'}); }
+          const target = a.getAttribute('href');
+          if (!target || target === '#') return;
+          const el = document.querySelector(target);
+          if (el) { e.preventDefault(); el.scrollIntoView({ behavior:'smooth' }); }
         });
       });
     })();
   </script>
-
 </body>
 </html>

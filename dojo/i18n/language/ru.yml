@@ -40,6 +40,7 @@ ru:
       user_msg2: "ok"
       ai_reply2_intro: "Хорошо. Начинаем."
       ai_reply2_example: "“Mentre studiavo, ho capito tutto.”"
+      ai_reply2_hint: "Imperfetto задаёт фон или действие в процессе. Passato prossimo отмечает событие, которое происходит внутри этой сцены или меняет её."
       ai_reply2_question: "Что меняется, если сказать “ho studiato”?"
 
     cta:

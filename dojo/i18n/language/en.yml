@@ -40,6 +40,7 @@ en:
       user_msg2: "ok"
       ai_reply2_intro: "Good. Let's go."
       ai_reply2_example: "“Mentre studiavo, ho capito tutto.”"
+      ai_reply2_hint: "Imperfetto sets the background or an action in progress. Passato prossimo marks the event that happens inside that scene or changes it."
       ai_reply2_question: "What changes if you say “ho studiato” instead?"
 
     cta:

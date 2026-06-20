@@ -27,7 +27,7 @@ en:
       title: "This is what dojo looks like."
       intro: "You open a conversation. dojo already knows where you stopped last time."
       bar_label: "scenario · study_open"
-      user_msg1: "ciao, riprendiamo a studiare italiano"
+      user_msg1: "hi, let's continue studying Italian"
       ai_reading: "Reading last session log..."
       ai_reply1_pre: "Welcome back. You have 2 open gaps:"
       ai_gap1_tag: "grammar"

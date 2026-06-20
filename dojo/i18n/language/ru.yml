@@ -27,7 +27,7 @@ ru:
       title: "Сессия с dojo"
       intro: "Ты открываешь разговор. dojo уже знает, где ты остановился в прошлый раз."
       bar_label: "сценарий · study_open"
-      user_msg1: "ciao, riprendiamo a studiare italiano"
+      user_msg1: "привет, продолжим изучать итальянский"
       ai_reading: "Читаю журнал последней сессии..."
       ai_reply1_pre: "Bentornato. У тебя 2 открытых пробела:"
       ai_gap1_tag: "грамматика"

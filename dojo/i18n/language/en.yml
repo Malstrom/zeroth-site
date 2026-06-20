@@ -13,14 +13,12 @@ en:
       eyebrow: "dojo / language"
       title: "Learn a language the way your brain actually works."
       body: "Not courses. Not repetition for its own sake. An AI sensei that tracks exactly what you know, finds the gap, and works only there."
-
     problem:
       label: "The problem"
       title: "Most people learn a language for years without ever becoming fluent."
       p1: "Not because they didn’t try. Because they were practising the wrong things — repeating what they already know instead of working on what’s actually missing."
       p2: "dojo tracks your real knowledge state, session after session, and works only on the gap between where you are and where you need to be."
       p3: "Whether you need technical vocabulary for work, conversational fluency, or academic writing — it adapts to your actual goal. No wasted time. Just the work that moves you forward."
-
     session:
       label: "A real session"
       title: "This is what dojo looks like."
@@ -39,7 +37,6 @@ en:
       ai_reply2_example: "“Mentre studiavo, ho capito tutto.”"
       ai_reply2_hint: "Imperfetto sets the background or an action in progress. Passato prossimo marks the event that happens inside that scene or changes it."
       ai_reply2_question: "What changes if you say “ho studiato” instead?"
-
     cta:
       scenarios: "Explore all scenarios →"
 
@@ -76,6 +73,32 @@ en:
       desc: "The final exam for your declared goal. Pass with 80%+ and dojo issues a makimono — a permanent record of your achievement."
       trigger: "› I’m ready for my Italian B2 exam"
     cta: "Start now →"
+
+  start:
+    hero:
+      eyebrow: "dojo / start"
+      title: "You’re five steps away."
+      body: "No installation. No configuration. Just two accounts and five minutes."
+    required: "required"
+    copy: "Copy"
+    step1:
+      title: "Get Perplexity Pro"
+      desc: "dojo runs entirely through Perplexity AI. Pro is required to connect GitHub — the connector is what lets dojo read and write your progress automatically."
+    step2:
+      title: "Get a GitHub account"
+      desc: "Free. Your dojo instance lives in a GitHub repo — your data, your history, fully under your control."
+    step3:
+      title: "Create a Space on Perplexity"
+      desc: "In Perplexity, open Spaces and create a new one. Name it exactly:"
+      callout_label: "Space name"
+    step4:
+      title: "Paste the Space instructions"
+      desc: "Open the Space settings, find the \"Instructions\" field and paste the text below. Replace &lt;your-username&gt; with your actual GitHub username."
+      note: "These instructions tell dojo where your repo is and how to behave across every session."
+    step5:
+      title: "Start your first session"
+      desc: "Open a new chat inside your dojo Space. Make sure the GitHub connector is active (click + → Connectors → check GitHub). Then send this message:"
+      note: "dojo will read your repo, run onboarding and guide you from there."
 
   wip:
     title: "Coming soon."

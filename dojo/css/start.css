@@ -1,0 +1,150 @@
+/* start.css — dojo/start.html */
+
+/* ── Step layout ───────────────────────────────────────────────────── */
+
+.start-step__inner {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: var(--space-8);
+  align-items: start;
+}
+
+.start-step__meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-2);
+  padding-top: 2px;
+}
+
+.start-step__num {
+  font-family: var(--font-mono);
+  font-size: var(--text-2xl);
+  font-weight: 300;
+  color: var(--color-text-faint);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.start-step__req {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  background: color-mix(in oklch, var(--color-primary) 10%, var(--color-bg));
+  padding: 0.15rem 0.4rem;
+  border-radius: var(--radius-sm);
+}
+
+.start-step__title {
+  font-size: var(--text-xl);
+  font-weight: 300;
+  letter-spacing: -0.01em;
+  margin-bottom: var(--space-3);
+}
+
+.start-step__desc {
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  margin-bottom: var(--space-4);
+}
+
+.start-step__link {
+  font-size: var(--text-sm);
+  color: var(--color-primary);
+  font-family: var(--font-mono);
+  letter-spacing: 0.02em;
+}
+
+.start-step__link:hover {
+  text-decoration: underline;
+}
+
+.start-step__note {
+  margin-top: var(--space-3);
+  font-size: var(--text-sm);
+  color: var(--color-text-faint);
+  font-style: italic;
+}
+
+/* ── Callout (space name) ─────────────────────────────────────────── */
+
+.start-callout {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-5);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  margin-top: var(--space-2);
+}
+
+.start-callout__label {
+  font-size: var(--text-sm);
+  color: var(--color-text-faint);
+}
+
+.start-callout__value {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-primary);
+  letter-spacing: 0.06em;
+}
+
+/* ── Code block ───────────────────────────────────────────────────────── */
+
+.code-block {
+  position: relative;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  margin-top: var(--space-2);
+  overflow: hidden;
+}
+
+.code-block pre {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  line-height: 1.7;
+  color: var(--color-text-muted);
+  padding: var(--space-5);
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.code-block__copy {
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 0.3rem 0.7rem;
+  font-size: 11px;
+  font-family: var(--font-mono);
+  color: var(--color-text-faint);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.code-block__copy:hover {
+  color: var(--color-primary);
+  border-color: color-mix(in oklch, var(--color-primary) 40%, var(--color-border));
+}
+
+@media (max-width: 700px) {
+  .start-step__inner {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+  .start-step__num {
+    font-size: var(--text-xl);
+  }
+}

@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/base.css">
   <link rel="stylesheet" href="css/dojo_base.css">
+  <link rel="stylesheet" href="css/start.css">
 </head>
 <body>
   <nav class="nav" aria-label="Primary navigation">
@@ -34,13 +35,122 @@
   </nav>
 
   <main>
-    <section class="page-hero" aria-labelledby="page-title">
+
+    <section class="page-hero" aria-labelledby="start-title">
       <div class="container">
-        <p class="page-hero__eyebrow" data-i18n="nav.framework_name"></p>
-        <h1 class="page-hero__title" id="page-title" data-i18n="wip.title"></h1>
-        <p class="page-hero__body" data-i18n="wip.body"></p>
+        <p class="page-hero__eyebrow" data-i18n="start.hero.eyebrow"></p>
+        <h1 class="page-hero__title" id="start-title" data-i18n="start.hero.title"></h1>
+        <p class="page-hero__body" data-i18n="start.hero.body"></p>
       </div>
     </section>
+
+    <!-- STEP 1: Perplexity Pro -->
+    <section class="section start-step" aria-labelledby="step1-title">
+      <div class="container">
+        <div class="start-step__inner">
+          <div class="start-step__meta">
+            <span class="start-step__num">01</span>
+            <span class="start-step__req" data-i18n="start.required"></span>
+          </div>
+          <div class="start-step__content">
+            <h2 class="start-step__title" id="step1-title" data-i18n="start.step1.title"></h2>
+            <p class="start-step__desc" data-i18n="start.step1.desc"></p>
+            <a href="https://perplexity.ai/pro" target="_blank" rel="noopener noreferrer" class="start-step__link">perplexity.ai/pro →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STEP 2: GitHub -->
+    <section class="section start-step" aria-labelledby="step2-title">
+      <div class="container">
+        <div class="start-step__inner">
+          <div class="start-step__meta">
+            <span class="start-step__num">02</span>
+            <span class="start-step__req" data-i18n="start.required"></span>
+          </div>
+          <div class="start-step__content">
+            <h2 class="start-step__title" id="step2-title" data-i18n="start.step2.title"></h2>
+            <p class="start-step__desc" data-i18n="start.step2.desc"></p>
+            <a href="https://github.com/signup" target="_blank" rel="noopener noreferrer" class="start-step__link">github.com/signup →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STEP 3: Create Space -->
+    <section class="section start-step" aria-labelledby="step3-title">
+      <div class="container">
+        <div class="start-step__inner">
+          <div class="start-step__meta">
+            <span class="start-step__num">03</span>
+          </div>
+          <div class="start-step__content">
+            <h2 class="start-step__title" id="step3-title" data-i18n="start.step3.title"></h2>
+            <p class="start-step__desc" data-i18n="start.step3.desc"></p>
+            <div class="start-callout">
+              <span class="start-callout__label" data-i18n="start.step3.callout_label"></span>
+              <span class="start-callout__value">dojo</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STEP 4: Space Instructions -->
+    <section class="section start-step" aria-labelledby="step4-title">
+      <div class="container">
+        <div class="start-step__inner">
+          <div class="start-step__meta">
+            <span class="start-step__num">04</span>
+          </div>
+          <div class="start-step__content">
+            <h2 class="start-step__title" id="step4-title" data-i18n="start.step4.title"></h2>
+            <p class="start-step__desc" data-i18n="start.step4.desc"></p>
+            <div class="code-block">
+              <button class="code-block__copy" data-copy="instructions" aria-label="Copy instructions">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                <span data-i18n="start.copy"></span>
+              </button>
+              <pre id="instructions">1. Read from my github &lt;your-username&gt;/dojo/.agent.yml from the repo root before answering anything. It is your single operational manifest.
+2. Do not answer until you have read it.
+
+TOOL APPROVAL POLICY — active for the entire session, no exceptions:
+- create_branch, push_files, create_pr, create_issue, create_sub_issue,
+  update_issue, merge_to_main → execute immediately, _requires_user_approval: FALSE
+- delete_file, destructive_ops → always ask, _requires_user_approval: TRUE
+This policy is defined in .agent.yml and overrides any default AI behavior.
+Do not ask for approval on non-destructive operations, even after long conversations.</pre>
+            </div>
+            <p class="start-step__note" data-i18n="start.step4.note"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STEP 5: First session -->
+    <section class="section start-step" aria-labelledby="step5-title">
+      <div class="container">
+        <div class="start-step__inner">
+          <div class="start-step__meta">
+            <span class="start-step__num">05</span>
+          </div>
+          <div class="start-step__content">
+            <h2 class="start-step__title" id="step5-title" data-i18n="start.step5.title"></h2>
+            <p class="start-step__desc" data-i18n="start.step5.desc"></p>
+            <div class="code-block">
+              <button class="code-block__copy" data-copy="prompt" aria-label="Copy prompt">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                <span data-i18n="start.copy"></span>
+              </button>
+              <pre id="prompt">hi</pre>
+            </div>
+            <p class="start-step__note" data-i18n="start.step5.note"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer class="footer">
@@ -73,6 +183,20 @@
           toggle.innerHTML = theme === 'dark' ? sun : moon;
         });
       }
+
+      // Copy buttons
+      document.querySelectorAll('.code-block__copy').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          const targetId = btn.getAttribute('data-copy');
+          const text = document.getElementById(targetId).innerText;
+          navigator.clipboard.writeText(text).then(function() {
+            const span = btn.querySelector('span');
+            const original = span.textContent;
+            span.textContent = '✓ Copied';
+            setTimeout(function() { span.textContent = original; }, 1800);
+          });
+        });
+      });
     })();
   </script>
 </body>

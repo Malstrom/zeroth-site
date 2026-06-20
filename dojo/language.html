@@ -76,16 +76,23 @@
 
           <div class="scenario-demo__body">
 
+            <!-- 1. Utente apre la sessione -->
             <div class="msg msg--user">
               <span class="msg__label">You</span>
               <div class="msg__bubble" data-i18n="landing.session.user_msg1"></div>
             </div>
 
+            <!-- 2. dojo: lettura log -->
+            <div class="msg msg--agent">
+              <span class="msg__label">dojo</span>
+              <div class="msg__bubble msg__bubble--system" data-i18n="landing.session.ai_reading"></div>
+            </div>
+
+            <!-- 3. dojo: gap report + raccomandazione -->
             <div class="msg msg--agent">
               <span class="msg__label">dojo</span>
               <div class="msg__bubble">
                 <p data-i18n="landing.session.ai_reply1_pre"></p>
-                <p data-i18n="landing.session.ai_reply1_gaps_intro"></p>
                 <ul class="gap-list">
                   <li>
                     <span class="gap-tag" data-i18n="landing.session.ai_gap1_tag"></span>
@@ -100,14 +107,17 @@
                     <p data-i18n="landing.session.ai_gap3_body"></p>
                   </li>
                 </ul>
+                <p class="msg__rec" data-i18n="landing.session.ai_rec"></p>
               </div>
             </div>
 
+            <!-- 4. Studente sceglie -->
             <div class="msg msg--user">
               <span class="msg__label">You</span>
               <div class="msg__bubble" data-i18n="landing.session.user_msg2"></div>
             </div>
 
+            <!-- 5. dojo: inizia -->
             <div class="msg msg--agent">
               <span class="msg__label">dojo</span>
               <div class="msg__bubble" data-i18n="landing.session.ai_reply2"></div>

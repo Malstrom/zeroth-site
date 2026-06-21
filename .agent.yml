@@ -11,7 +11,7 @@ site:
     Sito pubblico dell'ecosistema zeroth.
     zeroth è un meta-framework per costruire sistemi AI che operano
     su spazi personali GitHub. Il sito ospita la landing di zeroth
-    e le landing dei framework figli (attualmente: dojo).
+    e le landing dei framework figli.
   repo: https://github.com/Malstrom/zeroth-site
   default_branch: main
   languages_ui: [en, ru]
@@ -39,11 +39,15 @@ architecture:
           i18n: dojo/i18n/language/
           accent: oklch(63% 0.17 180)  # teal
         - file: dojo/scenarios.html
-          desc: Pagina elenco scenari dojo
+          desc: >
+            Pagina di livello inferiore condivisa tra tutte le landing dojo.
+            Elenca gli scenari disponibili indipendentemente dalla variante.
           css: [css/base.css, dojo/css/dojo_base.css, dojo/css/scenarios.css]
           i18n: dojo/i18n/language/
         - file: dojo/start.html
-          desc: Pagina onboarding — 5 passi per iniziare
+          desc: >
+            Pagina di livello inferiore condivisa tra tutte le landing dojo.
+            Guida onboarding in 5 passi per iniziare con qualsiasi variante.
           css: [css/base.css, dojo/css/dojo_base.css, dojo/css/start.css]
           i18n: dojo/i18n/language/
 

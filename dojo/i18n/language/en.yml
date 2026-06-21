@@ -39,7 +39,6 @@ en:
       ai_reply2_question: "What changes if you say “ho studiato” instead?"
     cta:
       scenarios: "Explore all scenarios"
-      sub: "This is one use case. dojo has many more."
 
   scenarios:
     hero:

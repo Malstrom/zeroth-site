@@ -39,7 +39,6 @@ ru:
       ai_reply2_question: "Что меняется, если сказать “ho studiato”?"
     cta:
       scenarios: "Смотреть все сценарии"
-      sub: "Это один сценарий из многих."
 
   scenarios:
     hero:

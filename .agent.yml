@@ -1,0 +1,142 @@
+# .agent.yml
+# Manifest operativo per agenti AI che lavorano su zeroth-site.
+# Leggere questo file prima di qualsiasi operazione sul repo.
+
+# ─────────────────────────────────────────────
+# SITE
+# ─────────────────────────────────────────────
+site:
+  name: zeroth-site
+  description: >
+    Sito pubblico dell'ecosistema zeroth.
+    zeroth è un meta-framework per costruire sistemi AI che operano
+    su spazi personali GitHub. Il sito ospita la landing di zeroth
+    e le landing dei framework figli (attualmente: dojo).
+  repo: https://github.com/Malstrom/zeroth-site
+  default_branch: main
+  languages_ui: [en, ru]
+
+# ─────────────────────────────────────────────
+# ARCHITETTURA
+# ─────────────────────────────────────────────
+architecture:
+  root_pages:
+    - file: zeroth.html
+      desc: Landing principale dell'ecosistema zeroth
+      css: [css/base.css, css/zeroth.css]
+      i18n: i18n/
+
+  frameworks:
+    dojo:
+      desc: >
+        Framework di apprendimento personalizzato.
+        Usa sessioni strutturate su scenari definiti.
+        Ogni utente ha il proprio spazio dojo su GitHub.
+      pages:
+        - file: dojo/language.html
+          desc: Landing variante "language learning"
+          css: [css/base.css, dojo/css/dojo_base.css, dojo/css/language.css]
+          i18n: dojo/i18n/language/
+          accent: oklch(63% 0.17 180)  # teal
+        - file: dojo/scenarios.html
+          desc: Pagina elenco scenari dojo
+          css: [css/base.css, dojo/css/dojo_base.css, dojo/css/scenarios.css]
+          i18n: dojo/i18n/language/
+        - file: dojo/start.html
+          desc: Pagina onboarding — 5 passi per iniziare
+          css: [css/base.css, dojo/css/dojo_base.css, dojo/css/start.css]
+          i18n: dojo/i18n/language/
+
+  shared_assets:
+    - path: css/base.css
+      desc: Token di design globali (colori, spacing, tipografia, radius)
+    - path: dojo/css/dojo_base.css
+      desc: Stili condivisi tra tutte le pagine dojo (nav, hero, sections, footer)
+    - path: assets/js/i18n.js
+      desc: Sistema i18n — carica YAML e inietta testi via data-i18n
+
+# ─────────────────────────────────────────────
+# FILE PROTETTI
+# Modificare solo su richiesta esplicita dell'owner.
+# ─────────────────────────────────────────────
+off_limits:
+  - path: css/base.css
+    reason: Token globali — cambiamenti impattano tutto il sito
+  - path: dojo/css/dojo_base.css
+    reason: CSS condiviso tra tutte le pagine dojo — non toccare per fix page-specific
+  - path: assets/js/i18n.js
+    reason: Sistema i18n core — non toccare senza consenso
+  - path: zeroth.html
+    reason: Pagina root — modifiche richiedono revisione
+
+# ─────────────────────────────────────────────
+# CONVENZIONI
+# ─────────────────────────────────────────────
+conventions:
+  naming:
+    - Le varianti dojo si chiamano per materia: language, rails, cs, ecc.
+    - I file CSS page-specific vivono in dojo/css/<variant>.css
+    - I file i18n vivono in dojo/i18n/<variant>/en.yml e ru.yml
+    - Le chiavi i18n seguono la struttura: landing.<section>.<key>
+
+  css_tokens:
+    - Ogni variante dojo definisce --color-accent in <variant>.css (non in dojo_base.css)
+    - --color-accent sostituisce --color-primary per bubble utente, gap-tag, CTA button
+    - Non usare colori hardcoded — sempre var(--color-*)
+
+  i18n:
+    - Ogni testo visibile nella pagina deve avere un key i18n in EN e RU
+    - Non scrivere testo direttamente nell'HTML — usare data-i18n="key"
+    - I key si aggiungono sempre in coppia (en.yml + ru.yml nello stesso commit)
+
+  commits:
+    - Un commit per operazione logica (non mescolare fix diversi)
+    - Formato messaggio: "<area>: <descrizione breve>" es. "language: add own section"
+
+# ─────────────────────────────────────────────
+# CRESCITA DEL SITO
+# ─────────────────────────────────────────────
+growth:
+  new_dojo_variant:
+    steps:
+      - Creare dojo/<variant>.html copiando la struttura di language.html
+      - Creare dojo/css/<variant>.css con --color-accent specifico della variante
+      - Creare dojo/i18n/<variant>/en.yml e ru.yml
+      - Aggiungere link alla nuova variante nella nav e/o in zeroth.html
+    note: dojo_base.css non va modificato per aggiungere una variante
+
+  new_ui_language:
+    steps:
+      - Aggiungere <lang>.yml in ogni cartella i18n (dojo/i18n/<variant>/ e i18n/)
+      - Aggiornare il toggle lingua nella nav
+      - Verificare che i18n.js supporti la nuova lingua
+
+  new_zeroth_framework:
+    steps:
+      - Creare cartella <framework>/ a livello root
+      - Seguire la stessa struttura di dojo/ (css/, i18n/, pagine HTML)
+      - Aggiungere entry in questo .agent.yml sotto architecture.frameworks
+
+# ─────────────────────────────────────────────
+# COMPORTAMENTO AGENTE
+# ─────────────────────────────────────────────
+agent:
+  read_this_file: sempre, prima di qualsiasi operazione
+
+  autonomous:
+    - Modifiche a file page-specific (es. language.css, language.html)
+    - Aggiunta/modifica chiavi i18n in en.yml e ru.yml
+    - Aggiunta nuove sezioni HTML in pagine esistenti
+    - Creazione nuovi file per nuove varianti
+
+  requires_confirmation:
+    - Qualsiasi modifica a file in off_limits
+    - Eliminazione di file esistenti
+    - Cambiamenti alla struttura del repo (cartelle, naming)
+    - Modifiche che impattano più di una pagina contemporaneamente
+
+  style:
+    - Agire solo su ciò che è stato richiesto — niente "miglioramenti" non richiesti
+    - Se un task tocca un file off_limits, segnalarlo e chiedere conferma prima
+    - Preferire commit atomici — un'operazione logica per commit
+    - Aggiornare sempre EN e RU nello stesso commit quando si toccano i18n

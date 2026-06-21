@@ -2,6 +2,10 @@
 
 /* ── Scenario demo ─────────────────────────────────────────────────────── */
 
+:root {
+  --color-accent: oklch(63% 0.17 180);
+}
+
 .scenario-demo {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
@@ -29,6 +33,10 @@
   height: 10px;
   border-radius: 50%;
   background: var(--color-divider);
+}
+
+.scenario-demo__dot:first-child {
+  background: color-mix(in oklch, var(--color-accent) 80%, var(--color-bg));
 }
 
 .scenario-demo__label {
@@ -77,7 +85,7 @@
 }
 
 .msg--user .msg__bubble {
-  background: var(--color-primary);
+  background: var(--color-accent);
   color: #fff;
   border-radius: var(--radius-lg) var(--radius-sm) var(--radius-lg) var(--radius-lg);
 }
@@ -133,8 +141,8 @@
   font-size: var(--text-xs);
   padding: 0.2rem 0.5rem;
   border-radius: var(--radius-sm);
-  background: color-mix(in oklch, var(--color-primary) 14%, var(--color-bg));
-  color: var(--color-primary);
+  background: color-mix(in oklch, var(--color-accent) 16%, var(--color-bg));
+  color: var(--color-accent);
   white-space: nowrap;
 }
 
@@ -150,14 +158,14 @@
 
 .section__cta {
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   margin-top: var(--space-8);
 }
 
 .section__cta .btn {
   display: inline-block;
   padding: var(--space-3) var(--space-6);
-  background: var(--color-primary);
+  background: var(--color-accent);
   color: #fff;
   border-radius: var(--radius-sm);
   font-size: var(--text-sm);
@@ -170,6 +178,20 @@
 .section__cta .btn:hover {
   opacity: 0.85;
 }
+
+/* ── Problem section tweaks ────────────────────────────────────────────── */
+
+.section[aria-labelledby="landing-problem-title"] .section__body p:first-of-type {
+  font-size: var(--text-md);
+  color: var(--color-text);
+}
+
+.section[aria-labelledby="landing-problem-title"] .section__body p + p {
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--color-divider);
+}
+
+/* Footer adjustments are in dojo_base.css; no language-specific overrides needed here. */
 
 @media (max-width: 700px) {
   .msg--user { justify-self: start; text-align: left; }

@@ -1,0 +1,6 @@
+/* programming.css — accent override for dojo programming variant */
+/* accent: indigo/violet — oklch(58% 0.20 270) */
+
+:root {
+  --color-accent: oklch(58% 0.20 270);
+}

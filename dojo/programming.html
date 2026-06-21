@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" data-page="programming">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="meta.title">dojo — programming</title>
+  <meta name="description" content="">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="css/dojo_base.css">
+  <link rel="stylesheet" href="css/programming.css">
+</head>
+<body>
+  <nav class="nav" aria-label="Primary navigation">
+    <div class="nav__inner">
+      <div class="nav__brand">
+        <a href="../zeroth.html" class="nav__logo" aria-label="Back to zeroth">
+          <span data-i18n="nav.zeroth">zeroth ←</span>
+        </a>
+        <span class="nav__framework" data-i18n="nav.framework_name">dojo</span>
+      </div>
+      <div class="nav__links">
+        <a href="scenarios.html" class="nav__link" data-i18n="nav.scenarios">Scenarios</a>
+        <a href="start.html" class="nav__link" data-i18n="nav.start">Start</a>
+      </div>
+      <div class="nav__actions">
+        <button class="nav__lang" data-lang-toggle aria-label="Switch language">EN / RU</button>
+        <button class="nav__toggle" data-theme-toggle aria-label="Switch theme">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <section class="page-hero" aria-labelledby="landing-title">
+      <div class="container">
+        <p class="page-hero__eyebrow" data-i18n="landing.hero.eyebrow"></p>
+        <h1 class="page-hero__title" id="landing-title" data-i18n="landing.hero.title"></h1>
+        <p class="page-hero__body" data-i18n="landing.hero.body"></p>
+
+        <div class="scenario-demo" role="region" aria-label="Example dojo session">
+
+          <div class="scenario-demo__bar">
+            <div class="scenario-demo__dots" aria-hidden="true">
+              <div class="scenario-demo__dot"></div>
+              <div class="scenario-demo__dot"></div>
+              <div class="scenario-demo__dot"></div>
+            </div>
+            <span class="scenario-demo__label" data-i18n="landing.session.bar_label"></span>
+          </div>
+
+          <div class="scenario-demo__body">
+
+            <div class="msg msg--user">
+              <span class="msg__label">You</span>
+              <div class="msg__bubble" data-i18n="landing.session.user_msg1"></div>
+            </div>
+
+            <div class="msg msg--agent">
+              <span class="msg__label">dojo</span>
+              <div class="msg__bubble msg__bubble--system" data-i18n="landing.session.ai_reading"></div>
+            </div>
+
+            <div class="msg msg--agent">
+              <span class="msg__label">dojo</span>
+              <div class="msg__bubble">
+                <p data-i18n="landing.session.ai_reply1_pre"></p>
+                <ul class="gap-list">
+                  <li>
+                    <span class="gap-tag" data-i18n="landing.session.ai_gap1_tag"></span>
+                    <p data-i18n="landing.session.ai_gap1_body"></p>
+                  </li>
+                  <li>
+                    <span class="gap-tag" data-i18n="landing.session.ai_gap2_tag"></span>
+                    <p data-i18n="landing.session.ai_gap2_body"></p>
+                  </li>
+                </ul>
+                <p class="msg__rec" data-i18n="landing.session.ai_rec"></p>
+              </div>
+            </div>
+
+            <div class="msg msg--user">
+              <span class="msg__label">You</span>
+              <div class="msg__bubble" data-i18n="landing.session.user_msg2"></div>
+            </div>
+
+            <div class="msg msg--agent">
+              <span class="msg__label">dojo</span>
+              <div class="msg__bubble">
+                <p data-i18n="landing.session.ai_reply2_intro"></p>
+                <p class="msg__example" data-i18n="landing.session.ai_reply2_example"></p>
+                <p class="msg__hint" data-i18n="landing.session.ai_reply2_hint"></p>
+                <p data-i18n="landing.session.ai_reply2_question"></p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="section__cta">
+          <a href="scenarios.html" class="btn" data-i18n="landing.cta.scenarios"></a>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="landing-problem-title">
+      <div class="container">
+        <p class="section__label" data-i18n="landing.problem.label"></p>
+        <h2 class="section__heading" id="landing-problem-title" data-i18n="landing.problem.title"></h2>
+        <div class="stack section__body">
+          <p data-i18n="landing.problem.p1"></p>
+          <p data-i18n="landing.problem.p2"></p>
+          <p data-i18n="landing.problem.p3"></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="landing-own-title">
+      <div class="container">
+        <p class="section__label" data-i18n="landing.own.label"></p>
+        <h2 class="section__heading" id="landing-own-title" data-i18n="landing.own.title"></h2>
+        <div class="stack section__body">
+          <p data-i18n="landing.own.p1"></p>
+          <p data-i18n="landing.own.p2"></p>
+          <p data-i18n="landing.own.p3"></p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <span class="footer__meta" data-i18n="footer.meta"></span>
+        <nav class="footer__links" aria-label="Footer links">
+          <a href="../zeroth.html" data-i18n="footer.zeroth"></a>
+          <a href="scenarios.html" data-i18n="footer.scenarios"></a>
+          <a href="start.html" data-i18n="footer.start"></a>
+          <a href="https://github.com/Malstrom/zeroth" target="_blank" rel="noopener noreferrer" data-i18n="footer.github"></a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/js-yaml@4/dist/js-yaml.min.js"></script>
+  <script src="../assets/js/i18n.js"></script>
+  <script>
+    (function(){
+      const root = document.documentElement;
+      const toggle = document.querySelector('[data-theme-toggle]');
+      const sun = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>';
+      const moon = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+      let theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      root.setAttribute('data-theme', theme);
+      if (toggle) {
+        toggle.innerHTML = theme === 'dark' ? sun : moon;
+        toggle.addEventListener('click', function(){
+          theme = theme === 'dark' ? 'light' : 'dark';
+          root.setAttribute('data-theme', theme);
+          toggle.innerHTML = theme === 'dark' ? sun : moon;
+          toggle.setAttribute('aria-label', 'Switch to ' + (theme === 'dark' ? 'light' : 'dark') + ' mode');
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

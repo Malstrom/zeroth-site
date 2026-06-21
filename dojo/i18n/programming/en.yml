@@ -1,0 +1,51 @@
+en:
+  meta:
+    title: "dojo — programming"
+
+  nav:
+    zeroth: "zeroth ←"
+    framework_name: "dojo"
+    scenarios: "Scenarios"
+    start: "Start"
+
+  landing:
+    hero:
+      eyebrow: "dojo / programming"
+      title: "Get better at coding the way engineers actually improve."
+      body: "Not tutorials. Not grinding LeetCode at random. An AI sensei that maps exactly what you know, finds the gap, and drills only there."
+    problem:
+      label: "The problem"
+      title: "Most developers plateau long before they reach their potential."
+      p1: "Not because they stopped coding. Because they keep writing code they already know how to write — solving comfortable problems instead of the ones that expose real gaps."
+      p2: "dojo tracks your actual knowledge state across sessions: concepts you've mastered, patterns you've seen but can't apply under pressure, and blind spots you don't know you have."
+      p3: "Whether your goal is passing a system design interview, shipping production-quality code, or deeply understanding a language or framework — dojo adapts to it. No wasted repetition. Only the work that moves you forward."
+    own:
+      label: "Your dojo"
+      title: "It's not a platform. It's yours."
+      p1: "dojo doesn't live on a server. Your sessions, your gap map, your progress — everything is stored in a personal GitHub repo. A notebook only you own. Download it, move it, share it, or use it with any AI tool you want."
+      p2: "No subscription that expires. No history that disappears. If the service shuts down tomorrow, your data is still on your machine."
+      p3: "And dojo is not limited to one language or stack. Rust, Python, system design, algorithms, distributed systems — if you can describe what you want to learn, dojo can track your gaps and build sessions around it."
+    session:
+      bar_label: "scenario · study_open"
+      user_msg1: "let's keep working on Rust ownership"
+      ai_reading: "Reading last session log..."
+      ai_reply1_pre: "Welcome back. You have 2 open gaps:"
+      ai_gap1_tag: "ownership"
+      ai_gap1_body: "Lifetime annotations in structs — introduced last session, not yet applied correctly under pressure."
+      ai_gap2_tag: "borrow checker"
+      ai_gap2_body: "Simultaneous mutable and immutable borrows — still causing compile errors in non-trivial cases."
+      ai_rec: "I'd suggest starting with lifetimes — it's the root cause of most borrow errors."
+      user_msg2: "ok"
+      ai_reply2_intro: "Good. Let's go."
+      ai_reply2_example: "`struct Important<'a> { part: &'a str }`"
+      ai_reply2_hint: "The lifetime `'a` tells the compiler: this struct cannot outlive the reference it holds. It's a contract between the struct and its data."
+      ai_reply2_question: "What happens if you try to return this struct from a function without annotating the return type with `'a`?"
+    cta:
+      scenarios: "Explore all scenarios"
+
+  footer:
+    meta: "zeroth ecosystem"
+    zeroth: "zeroth"
+    scenarios: "Scenarios"
+    start: "Start"
+    github: "GitHub"

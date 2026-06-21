@@ -16,7 +16,7 @@ en:
     problem:
       label: "The problem"
       title: "Most people learn a language for years without ever becoming fluent."
-      p1: "Not because they didn’t try. Because they were practising the wrong things — repeating what they already know instead of working on what’s actually missing."
+      p1: "Not because they didn't try. Because they were practising the wrong things — repeating what they already know instead of working on what's actually missing."
       p2: "dojo tracks your real knowledge state, session after session, and works only on the gap between where you are and where you need to be."
       p3: "Whether you need technical vocabulary for work, conversational fluency, or academic writing — it adapts to your actual goal. No wasted time. Just the work that moves you forward."
     session:
@@ -38,13 +38,14 @@ en:
       ai_reply2_hint: "Imperfetto sets the background or an action in progress. Passato prossimo marks the event that happens inside that scene or changes it."
       ai_reply2_question: "What changes if you say “ho studiato” instead?"
     cta:
-      scenarios: "Explore all scenarios →"
+      scenarios: "Explore all scenarios"
+      sub: "This is one use case. dojo has many more."
 
   scenarios:
     hero:
       eyebrow: "dojo / scenarios"
       title: "Every session follows a scenario."
-      body: "dojo doesn’t work freestyle. Each interaction maps to a defined scenario — so the AI always knows what it’s doing and why."
+      body: "dojo doesn't work freestyle. Each interaction maps to a defined scenario — so the AI always knows what it's doing and why."
     list:
       label: "The scenarios"
       title: "What dojo can do."
@@ -54,7 +55,7 @@ en:
       trigger: "› study passato prossimo vs imperfetto"
     randori:
       title: "Drill and practice"
-      desc: "Quiz yourself on what you’ve just learned. dojo asks reasoning questions and updates your gap map in real time."
+      desc: "Quiz yourself on what you've just learned. dojo asks reasoning questions and updates your gap map in real time."
       trigger: "› quiz me on this"
     declare_goal:
       title: "Set a learning goal"
@@ -62,7 +63,7 @@ en:
       trigger: "› I want to reach B2 in Italian"
     evaluate_readiness:
       title: "Check readiness"
-      desc: "After studying, dojo evaluates whether you’re ready for an exam or if there are still gaps to close first."
+      desc: "After studying, dojo evaluates whether you're ready for an exam or if there are still gaps to close first."
       trigger: "› am I ready for the exam?"
     topic_shinsa:
       title: "Topic exam"
@@ -71,13 +72,13 @@ en:
     goal_shinsa:
       title: "Goal exam"
       desc: "The final exam for your declared goal. Pass with 80%+ and dojo issues a makimono — a permanent record of your achievement."
-      trigger: "› I’m ready for my Italian B2 exam"
+      trigger: "› I'm ready for my Italian B2 exam"
     cta: "Start now →"
 
   start:
     hero:
       eyebrow: "dojo / start"
-      title: "You’re five steps away."
+      title: "You're five steps away."
       body: "No installation. No configuration. Just two accounts and five minutes."
     required: "required"
     copy: "Copy"
@@ -107,4 +108,6 @@ en:
   footer:
     meta: "zeroth ecosystem"
     zeroth: "zeroth"
-    framework: "dojo"
+    scenarios: "Scenarios"
+    start: "Start"
+    github: "GitHub"

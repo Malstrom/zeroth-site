@@ -28,7 +28,7 @@ ru:
       ai_reading: "Читаю журнал последней сессии..."
       ai_reply1_pre: "Bentornato. У тебя 2 открытых пробела:"
       ai_gap1_tag: "грамматика"
-      ai_gap1_body: "Passato prossimo vs imperfetto — систематические ошибки в длитемьных прошедших состояниях."
+      ai_gap1_body: "Passato prossimo vs imperfetto — систематические ошибки в длительных прошедших состояниях."
       ai_gap2_tag: "лексика / регистр"
       ai_gap2_body: "Формальный регистр в письменном итальянском — 6 целевых выражений введено, 2 ещё не активны."
       ai_rec: "Предлагаю начать с грамматики — она блокирует больше всего."
@@ -38,7 +38,8 @@ ru:
       ai_reply2_hint: "Imperfetto задаёт фон или действие в процессе. Passato prossimo отмечает событие, которое происходит внутри этой сцены или меняет её."
       ai_reply2_question: "Что меняется, если сказать “ho studiato”?"
     cta:
-      scenarios: "Смотреть все сценарии →"
+      scenarios: "Смотреть все сценарии"
+      sub: "Это один сценарий из многих."
 
   scenarios:
     hero:
@@ -107,4 +108,6 @@ ru:
   footer:
     meta: "экосистема zeroth"
     zeroth: "zeroth"
-    framework: "dojo"
+    scenarios: "Сценарии"
+    start: "Начать"
+    github: "GitHub"

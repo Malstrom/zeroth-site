@@ -19,6 +19,12 @@ en:
       p1: "Not because they didn't try. Because they were practising the wrong things — repeating what they already know instead of working on what's actually missing."
       p2: "dojo tracks your real knowledge state, session after session, and works only on the gap between where you are and where you need to be."
       p3: "Whether you need technical vocabulary for work, conversational fluency, or academic writing — it adapts to your actual goal. No wasted time. Just the work that moves you forward."
+    own:
+      label: "Your dojo"
+      title: "It's not an app. It's yours."
+      p1: "dojo doesn't live on a server. Everything you do — your sessions, your gaps, your progress — is saved in a personal space on GitHub. Think of it as a notebook that only you own. You can download it, move it, share it, or use it with any AI tool you want."
+      p2: "No account to lose. No subscription that deletes your history. If GitHub disappeared tomorrow, your data is still there, on your machine."
+      p3: "And dojo has no limits on what you can study. Languages, programming, chemistry, history, music theory — if you can describe what you want to learn, dojo can track your gaps and build sessions around it. The only requirement is wanting to learn."
     session:
       label: "A real session"
       title: "This is what dojo looks like."
